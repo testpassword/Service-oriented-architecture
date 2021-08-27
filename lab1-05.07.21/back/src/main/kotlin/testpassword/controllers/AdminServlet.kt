@@ -29,12 +29,12 @@ class AdminServlet: HttpServlet() {
     override fun doPost(req: HttpServletRequest, resp: HttpServletResponse) =
         resp {
             SchemaUtils.create(CoordinatesTable, PersonTable, DragonTable)
-            "done creation tables" to Res.SC_OK
+            json()("msg" to "done creation tables") to Res.SC_OK
         }
 
     override fun doDelete(req: HttpServletRequest, resp: HttpServletResponse) =
         resp {
             sequenceOf(Dragon, Person, Coordinates).flatMap { it.all() }.forEach(LongEntity::delete)
-            "database cleared" to Res.SC_OK
+            json()("msg" to "database cleared") to Res.SC_OK
         }
 }

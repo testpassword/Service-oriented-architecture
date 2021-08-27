@@ -19,10 +19,17 @@ class Coordinates(id: EntityID<Long>): LongEntity(id), Comparable<Coordinates>, 
     }
 
     override infix fun recoverFromJSON(changes: JSONObject): Coordinates =
-            also {
-                listOf(
-                    { x = changes.getDouble("x") },
-                    { y = changes.getDouble("y") }
-                ).forEach { runCatching(it) }
-            }
+        also {
+            listOf(
+                { x = changes.getDouble("x") },
+                { y = changes.getDouble("y") }
+            ).forEach { runCatching(it) }
+        }
+
+    override fun transformToJSON(): JSONObject =
+        JSONObject().apply {
+            put("id", id)
+            put("x", x)
+            put("y", y)
+        }
 }

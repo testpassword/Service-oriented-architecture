@@ -24,13 +24,23 @@ class Person(id: EntityID<Long>): LongEntity(id), Comparable<Person>, JSONRecove
         }.run { this(this@Person) - this(other) }
 
     override infix fun recoverFromJSON(changes: JSONObject): Person =
-            also {
-                listOf(
-                    { name = changes.getString("name") },
-                    { height = changes.getInt("height") },
-                    { weight = changes.getInt("weight") },
-                    { passportID = changes.getString("passportID") },
-                    { hairColor = Color.valueOf(changes.getString("hairColor")) }
-                ).forEach { runCatching(it) }
-            }
+        also {
+            listOf(
+                { name = changes.getString("name") },
+                { height = changes.getInt("height") },
+                { weight = changes.getInt("weight") },
+                { passportID = changes.getString("passportID") },
+                { hairColor = Color.valueOf(changes.getString("hairColor")) }
+            ).forEach { runCatching(it) }
+        }
+
+    override fun transformToJSON(): JSONObject =
+        JSONObject().apply {
+            put("id", id)
+            put("name", name)
+            put("height", height)
+            put("weight", weight)
+            put("passportID", passportID)
+            put("hairColor", hairColor.toString())
+        }
 }

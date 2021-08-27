@@ -13,7 +13,7 @@ import testpassword.controllers.PersonServlet
 import testpassword.extensions.Res
 import kotlin.reflect.KClass
 
-val GLOBAL_EXCEPTION_HANDLERS = emptyMap<KClass<out Exception>, Pair<String, Int>>().toMutableMap()
+val GLOBAL_EXCEPTION_HANDLERS = emptyMap<KClass<out Exception>, Pair<Any, Int>>().toMutableMap()
 val SERVLET_MAPPING = mapOf(
     AdminServlet::class to "/api/admin",
     DragonServlet::class to "/api/dragon",
@@ -36,13 +36,19 @@ fun initServer(port: Int) =
         }
     }.start()
 
-fun main(args: Array<String>) {
+fun initArgs(args: Array<String>): Pair<Int, String> {
     val parser = ArgParser("soa1")
     val port by parser.option(ArgType.Int, "port", "P", "port which server use for webapp").default(8090)
     val dbConfig by parser.option(ArgType.String, "database", "DB",
         "database config in format: jdbc:postgresql://user:password@netloc:port/dbname?param1=value1&...").required()
     parser.parse(args)
+    return port to dbConfig
+}
+
+fun main(args: Array<String>) {
+    val (port, dbConfig) = initArgs(args)
     GLOBAL_EXCEPTION_HANDLERS[NullPointerException::class] = ("Entity with id requested id didn't exists" to Res.SC_BAD_REQUEST)
+    GLOBAL_EXCEPTION_HANDLERS[NoSuchElementException::class] = (emptySet<Any>() to Res.SC_BAD_REQUEST)
     initDB(dbConfig)
     initServer(port)
 }

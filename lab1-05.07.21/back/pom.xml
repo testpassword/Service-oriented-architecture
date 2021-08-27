@@ -56,9 +56,14 @@
             <version>20210307</version>
         </dependency>
         <dependency>
-            <groupId>com.beust</groupId>
-            <artifactId>klaxon</artifactId>
-            <version>5.5</version>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.12.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.exposed</groupId>
@@ -67,12 +72,12 @@
         </dependency>
         <dependency>
             <groupId>org.jetbrains.exposed</groupId>
-            <artifactId>exposed-dao</artifactId>
+            <artifactId>exposed-jdbc</artifactId>
             <version>0.33.1</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.exposed</groupId>
-            <artifactId>exposed-jdbc</artifactId>
+            <artifactId>exposed-dao</artifactId>
             <version>0.33.1</version>
         </dependency>
         <dependency>
