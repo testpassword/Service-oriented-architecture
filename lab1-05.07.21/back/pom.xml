@@ -86,14 +86,14 @@
             <version>0.33.1</version>
         </dependency>
         <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.2.23</version>
-        </dependency>
-        <dependency>
             <groupId>com.github.jkcclemens</groupId>
             <artifactId>khttp</artifactId>
             <version>0.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.23</version>
         </dependency>
     </dependencies>
 

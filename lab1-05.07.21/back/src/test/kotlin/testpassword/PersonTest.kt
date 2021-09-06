@@ -5,7 +5,6 @@ import khttp.get
 import khttp.post
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
-import kotlin.math.E
 
 class PersonTest {
 
