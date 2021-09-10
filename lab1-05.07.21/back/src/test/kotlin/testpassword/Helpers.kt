@@ -1,20 +1,27 @@
 package testpassword
 
 import com.github.javafaker.Faker
+import khttp.responses.Response
+import org.json.JSONArray
 import testpassword.models.Color
 import java.net.URL
 
-val F = Faker()
 val API_ROOT = URL("http://localhost:8090/api/")
+
 data class WebAppMap(
     val root: URL = API_ROOT,
-    val admin: URL = URL("${API_ROOT}admin"),
-    val person: URL = URL("${API_ROOT}person"),
-    val dragon: URL = URL("${API_ROOT}dragon"),
+    val admin: URL = URL("${API_ROOT}admin/"),
+    val person: URL = URL("${API_ROOT}persons/"),
+    val dragon: URL = URL("${API_ROOT}dragons/"),
 )
 val API = WebAppMap()
 
-fun `generate random person`(amount: Int = 1) =
+fun JSONArray.toJsonObjectsList() = this.let { it.mapIndexed { i, _ -> it.getJSONObject(i) }.toList() }
+
+val Response.id: Long get() = this.jsonObject.getLong("id")
+
+val F = Faker()
+fun `generate random person`(amount: Int = 1): List<Map<String, Any>> =
     (1..amount).map {
         mapOf(
             "name" to F.name().firstName(),

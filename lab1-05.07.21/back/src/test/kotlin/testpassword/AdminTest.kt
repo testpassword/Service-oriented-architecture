@@ -10,6 +10,8 @@ class AdminTest {
 
     @Test fun `webapp is available`() = assertEquals(200, get(ENDPOINT).statusCode)
 
+    @Test fun `create tables in database`() = assertEquals(200, post(ENDPOINT).statusCode)
+
     @Test fun `drop all records`() {
         delete(ENDPOINT)
         assertTrue(listOf(API.person, API.dragon).flatMap { get(it.toString()).jsonArray }.isEmpty())

@@ -9,9 +9,10 @@ import testpassword.extensions.*
 import testpassword.repos.CoordinatesTable
 import testpassword.repos.DragonTable
 import testpassword.repos.PersonTable
+import javax.servlet.annotation.WebServlet
 import javax.servlet.http.*
 
-class AdminServlet: HttpServlet() {
+@WebServlet("/api/admin/*") class AdminServlet: HttpServlet() {
 
     override fun doGet(request: HttpServletRequest, response: HttpServletResponse) {
         response.contentType = "text/html"
@@ -28,7 +29,9 @@ class AdminServlet: HttpServlet() {
 
     override fun doPost(req: HttpServletRequest, resp: HttpServletResponse) =
         resp {
-            SchemaUtils.create(CoordinatesTable, PersonTable, DragonTable)
+            SchemaUtils.create(CoordinatesTable, PersonTable)
+            // we separate creation of DragonTable because other should be already created otherwise it's throws an exception
+            SchemaUtils.create(DragonTable)
             json()("msg" to "done creation tables") to Res.SC_OK
         }
 

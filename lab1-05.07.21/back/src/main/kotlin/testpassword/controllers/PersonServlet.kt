@@ -3,11 +3,12 @@ package testpassword.controllers
 import testpassword.extensions.*
 import testpassword.models.Person
 import testpassword.repos.PersonTable
+import javax.servlet.annotation.WebServlet
 import javax.servlet.http.HttpServlet
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
-class PersonServlet: HttpServlet() {
+@WebServlet("/api/persons/*") class PersonServlet: HttpServlet() {
 
     override fun doGet(req: HttpServletRequest, resp: HttpServletResponse) =
         resp {
@@ -24,10 +25,7 @@ class PersonServlet: HttpServlet() {
         resp {
             with(req.json) {
                 if (isEmpty) "Nothing to modify" to Res.SC_ACCEPTED
-                else json()(
-                    "msg" to "successfully modified",
-                    "id" to (Person.findById(req.id)!! recoverFromJSON this@with).id
-                ) to Res.SC_OK
+                else json()("msg" to "successfully modified") to Res.SC_OK
             }
         }
 
@@ -42,9 +40,6 @@ class PersonServlet: HttpServlet() {
     override fun doDelete(req: HttpServletRequest, resp: HttpServletResponse) =
         resp {
             Person.findById(req.id)!!.delete()
-            json()(
-                "msg" to "successfully removed",
-                "id" to req.id
-            ) to Res.SC_OK
+            json()("msg" to "successfully removed") to Res.SC_OK
         }
 }

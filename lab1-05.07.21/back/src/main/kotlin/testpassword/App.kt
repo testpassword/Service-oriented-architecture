@@ -11,13 +11,15 @@ import testpassword.controllers.AdminServlet
 import testpassword.controllers.DragonServlet
 import testpassword.controllers.PersonServlet
 import testpassword.extensions.Res
+import testpassword.extensions.invoke
+import testpassword.extensions.json
 import kotlin.reflect.KClass
 
 val GLOBAL_EXCEPTION_HANDLERS = emptyMap<KClass<out Exception>, Pair<Any, Int>>().toMutableMap()
 val SERVLET_MAPPING = mapOf(
-    AdminServlet::class to "/api/admin",
-    DragonServlet::class to "/api/dragon",
-    PersonServlet::class to "/api/person"
+    AdminServlet::class to "/api/admin/*",
+    DragonServlet::class to "/api/dragons/*",
+    PersonServlet::class to "/api/persons/*"
 )
 
 infix operator fun String.minus(removable: String): String = this.replace(removable, "")
@@ -47,8 +49,7 @@ fun initArgs(args: Array<String>): Pair<Int, String> {
 
 fun main(args: Array<String>) {
     val (port, dbConfig) = initArgs(args)
-    GLOBAL_EXCEPTION_HANDLERS[NullPointerException::class] = ("Entity with id requested id didn't exists" to Res.SC_BAD_REQUEST)
-    GLOBAL_EXCEPTION_HANDLERS[NoSuchElementException::class] = (emptySet<Any>() to Res.SC_BAD_REQUEST)
+    GLOBAL_EXCEPTION_HANDLERS[NullPointerException::class] = json()("msg" to "required entity didn't exists") to Res.SC_NOT_FOUND
     initDB(dbConfig)
     initServer(port)
 }
