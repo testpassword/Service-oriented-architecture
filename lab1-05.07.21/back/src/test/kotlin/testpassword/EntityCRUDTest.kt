@@ -8,21 +8,15 @@ import org.junit.jupiter.params.provider.EnumSource
 
 class EntityCRUDTest {
 
-    enum class Entity(val endpoint: String) {
-        PERSON("http://localhost:8090/api/persons/"),
-        DRAGON("http://localhost:8090/api/dragons/");
-    }
-
     private fun `generate entity`(entity: Entity): Map<String, Any> =
         when (entity) {
             Entity.PERSON -> `generate random person`()
             Entity.DRAGON -> `generate random dragon`()
+            else -> throw Exception("generator function didn't exists")
         }.first()
 
     @ParameterizedTest @EnumSource(Entity::class)
-    fun `get all`(entity: Entity) {
-        Assertions.assertDoesNotThrow { get(entity.endpoint).jsonArray }
-    }
+    fun `get all`(entity: Entity) = Assertions.assertDoesNotThrow { get(entity.endpoint).jsonArray }
 
 
     @ParameterizedTest @EnumSource(Entity::class)
