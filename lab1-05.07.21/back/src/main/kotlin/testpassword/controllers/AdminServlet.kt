@@ -9,10 +9,9 @@ import testpassword.extensions.*
 import testpassword.repos.CoordinatesTable
 import testpassword.repos.DragonTable
 import testpassword.repos.PersonTable
-import javax.servlet.annotation.WebServlet
 import javax.servlet.http.*
 
-@WebServlet("/api/admin/*") class AdminServlet: HttpServlet() {
+class AdminServlet: HttpServlet() {
 
     override fun doGet(request: HttpServletRequest, response: HttpServletResponse) {
         response.contentType = "text/html"
@@ -21,7 +20,7 @@ import javax.servlet.http.*
             <html>
                 <body>
                     <h1>WELCOME, GOD OF DIGITAL WORLD</h1>
-                </body>                
+                </body>    
             </html>
             """.trimIndent())
         }

@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="EmbeddedKt" type="JetRunConfigurationType" nameIsGenerated="true">
+    <envs>
+      <env name="DATABASE" value="jdbc:postgresql://postgres:root@localhost:5432/soa1" />
+      <env name="PORT" value="8090" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="testpassword.EmbeddedKt" />
+    <module name="back" />
+    <shortenClasspath name="NONE" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

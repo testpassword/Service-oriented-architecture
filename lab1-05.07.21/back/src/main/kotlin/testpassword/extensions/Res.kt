@@ -2,7 +2,7 @@ package testpassword.extensions
 
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.json.JSONObject
-import testpassword.GLOBAL_EXCEPTION_HANDLERS
+import testpassword.StartupParamsHolder.GLOBAL_EXCEPTION_HANDLERS
 import javax.servlet.http.HttpServletResponse
 import kotlin.reflect.KClass
 
@@ -23,6 +23,7 @@ operator fun Res.invoke(customExceptionHandlers: Map<KClass<out Exception>, Pair
                     "stackTrace" to e.stackTraceToString()
                     ) to Res.SC_BAD_REQUEST)
         }
+        addHeader("Access-Control-Allow-Origin", "*")
         status = code
         contentType = "application/json"
         writer.println(data)

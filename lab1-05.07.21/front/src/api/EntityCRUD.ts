@@ -1,8 +1,6 @@
 const ROOT = process.env.REACT_APP_BACK_URL
 
-const DEFAULT_HANDLER = res => {
-    return res.json()
-}
+const toJson = res => res.json()
 
 const EntitiesURLs = {
     PERSON: `${ROOT}persons/`,
@@ -12,12 +10,11 @@ const EntitiesURLs = {
 const EntityCRUD = {
 
     getAll: <T>(entity: string): Promise<T> => {
-        alert(entity)
-        return fetch(entity, { method: 'GET'}).then(DEFAULT_HANDLER)
+        return fetch(entity, { method: 'GET'}).then(toJson)
     },
 
     getById: <T>(entity: string, id: number): Promise<T> => {
-        return fetch(`${entity}${id}`, { method: 'GET' }).then(DEFAULT_HANDLER)
+        return fetch(`${entity}${id}`, { method: 'GET' }).then(toJson)
     },
 
     updateById: <T>(entity: string, id: number, modifiedData: object): Promise<T> => {
@@ -25,7 +22,7 @@ const EntityCRUD = {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(modifiedData)
-        }).then(DEFAULT_HANDLER)
+        }).then(toJson)
     },
 
     add: <T>(entity: string, newbie: object): Promise<T> => {
@@ -33,12 +30,12 @@ const EntityCRUD = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newbie)
-        }).then(DEFAULT_HANDLER)
+        }).then(toJson)
     },
 
     delete: <T>(entity: string, id: number): Promise<T> => {
-        return fetch(`${entity}${id}`, { method: 'DELETE' }).then(DEFAULT_HANDLER)
+        return fetch(`${entity}${id}`, { method: 'DELETE' }).then(toJson)
     },
 }
 
-export { EntitiesURLs, EntityCRUD, DEFAULT_HANDLER }
+export { EntitiesURLs, EntityCRUD, toJson }

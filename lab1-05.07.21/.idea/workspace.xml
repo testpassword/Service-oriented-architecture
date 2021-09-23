@@ -5,49 +5,109 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62e3dc41-f9ca-40ea-8986-d9cb83080a36" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/front.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/api/Dragon.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/api/EntityCRUD.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/api/Person.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/components/ManagementConsole.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/react-app-env.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/resources/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/resources/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/resources/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/back_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/back_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/EmbeddedKt.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/Embedded.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/StartupParamsHolder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/WARInitializer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/AppKt.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/DragonServlet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/DragonServlet.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/test/kotlin/testpassword/AdminTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/test/kotlin/testpassword/AdminTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/test/kotlin/testpassword/DragonTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/test/kotlin/testpassword/DragonTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/test/kotlin/testpassword/EntityCRUDTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/test/kotlin/testpassword/EntityCRUDTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/test/kotlin/testpassword/Helpers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/test/kotlin/testpassword/Helpers.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/test/kotlin/testpassword/PersonTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/test/kotlin/testpassword/PersonTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonServlet$doDelete$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonServlet$doDelete$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonServlet$doGet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonServlet$doGet$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonServlet$doPost$1$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonServlet$doPost$1$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonServlet$doPost$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonServlet$doPost$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonServlet$doPut$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonServlet$doPut$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/AdminTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/test-classes/testpassword/AdminTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/DragonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/test-classes/testpassword/DragonTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/EntityCRUDTest$Entity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/EntityCRUDTest$WhenMappings.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/test-classes/testpassword/EntityCRUDTest$WhenMappings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/EntityCRUDTest$modify existing$getAndConvert$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/test-classes/testpassword/EntityCRUDTest$modify existing$getAndConvert$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/EntityCRUDTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/test-classes/testpassword/EntityCRUDTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/HelpersKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/test-classes/testpassword/HelpersKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/PersonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/test-classes/testpassword/PersonTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/WebAppMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/back.iml" beforeDir="false" afterPath="$PROJECT_DIR$/back/back.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/back/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/App.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/AdminServlet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/AdminServlet.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/DragonServlet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/DragonsServlet.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/PersonServlet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/PersonsServlet.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/extensions/Res.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/extensions/Res.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE-jar-with-dependencies.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/META-INF/back.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/AppKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet$doDelete$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet$doDelete$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet$doPost$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonServlet$doDelete$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonServlet$doGet$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonServlet$doPost$1$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonServlet$doPost$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonServlet$doPut$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonServlet$doDelete$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonServlet$doGet$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonServlet$doPost$1$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonServlet$doPost$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonServlet$doPut$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/Db_extKt$isNotBlank$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/Db_extKt$isPositiveDouble$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/Db_extKt$isPositiveInt$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/Db_extKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/ReqKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/ResKt$invoke$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/ResKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Color.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Coordinates$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Coordinates$compareTo$hypotenuse$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Coordinates$recoverFromJSON$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Coordinates$recoverFromJSON$1$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Coordinates.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$DragonType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$compareTo$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$2$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/JSONRecoverable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Person$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Person$compareTo$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Person$compareTo$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Person$recoverFromJSON$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Person$recoverFromJSON$1$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Person$recoverFromJSON$1$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Person$recoverFromJSON$1$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Person$recoverFromJSON$1$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/repos/CoordinatesTable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/repos/DragonTable$coordinates$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/repos/DragonTable$find with killer weaker then$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/repos/DragonTable$groupByType$$inlined$groupingBy$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/repos/DragonTable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/repos/PersonTable$find person included in name$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/repos/PersonTable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/surefire-reports/TEST-testpassword.AdminTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/surefire-reports/TEST-testpassword.DragonTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/surefire-reports/TEST-testpassword.PersonTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/surefire-reports/testpassword.AdminTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/surefire-reports/testpassword.DragonTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/surefire-reports/testpassword.PersonTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/test-classes/META-INF/back.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/AdminTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/DragonTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/Entity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/EntityCRUDTest$WhenMappings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/EntityCRUDTest$modify existing$getAndConvert$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/EntityCRUDTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/HelpersKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/PersonTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/.env" beforeDir="false" afterPath="$PROJECT_DIR$/front/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/api/Dragon.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/api/Dragon.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/api/EntityCRUD.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/api/EntityCRUD.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/api/Person.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/api/Person.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/ManagementConsole.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/ManagementConsole.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,8 +124,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin File" />
-        <option value="Kotlin Class" />
         <option value="TypeScript File" />
+        <option value="Kotlin Object" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -117,7 +178,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MTHome" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/front/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -128,13 +189,16 @@
       <recent name="$PROJECT_DIR$/front/src/resources" />
       <recent name="$PROJECT_DIR$/back/scripts" />
     </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="testpassword" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.start">
     <configuration name="DragonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="back" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testpassword.*" />
+          <option name="PATTERN" value="testpassword.EmbeddedKt" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -149,7 +213,7 @@
       <module name="back" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testpassword.*" />
+          <option name="PATTERN" value="testpassword.EmbeddedKt" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -165,7 +229,7 @@
       <module name="back" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testpassword.*" />
+          <option name="PATTERN" value="testpassword.EmbeddedKt" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -177,23 +241,778 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonTest.find person included in name" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="back" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testpassword.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testpassword" />
-      <option name="MAIN_CLASS_NAME" value="testpassword.PersonTest" />
-      <option name="METHOD_NAME" value="find person included in name" />
-      <option name="TEST_OBJECT" value="method" />
+    <configuration name="local" type="JettyConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="Jetty 9.4.43.v20210629" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="11">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080" />
+      <option name="BROWSER_ID" value="e5120d43-2c3f-47ef-9f26-65e539e05186" />
+      <option name="COMMON_VM_ARGUMENTS" value="-Ddatabase=jdbc:postgresql://postgres:root@localhost:5432/soa1" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <file path="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE.war">
+          <settings DEPLOYMENT_METHOD="contexts" />
+        </file>
+      </deployment>
+      <server-settings>
+        <data>
+          <option name="baseDirectoryName" value="e38079a8-9abb-4cf7-a58c-a6c6a3e078e6" />
+          <option name="configFiles">
+            <list>
+              <JettyConfigFile>
+                <option name="path" value="modules/stats.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-store-gcloud.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jolokia.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/console-capture.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/logging-jul.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/logging-jetty.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/logging-logback.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/alpn.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/ssl.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/apache-jsp.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/cdi-decorate.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/customrequestlog.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jmx-remote.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jaas.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/gzip.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/infinispan-embedded-query.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/infinispan-remote.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/ext.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/proxy.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/unixsocket-forwarded.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/slf4j-log4j.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/log4j2-impl.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-store-jdbc.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/log4j2-api.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/cdi2.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/quickstart.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/debuglog.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jul-impl.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/resources.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/unixsocket-proxy-protocol.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/unixsocket-http.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/flight-recorder.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-store-hazelcast-embedded.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/log4j2-slf4j.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/gcloud-datastore.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-store-cache.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/ssl-reload.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/security.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/unixsocket.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/logging-slf4j.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-store-file.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/requestlog.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/cdi.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="active" value="true" />
+                <option name="path" value="modules/jmx.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-store-mongo.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-cache-null.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/http-forwarded.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jstl.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/lowresources.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/client.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/global-webapp-common.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/decorate.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/servlets.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/slf4j-log4j2.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/plus.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/acceptratelimit.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jamon.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/websocket.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jaspi.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/continuation.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/fcgi.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/connectionlimit.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jdbc.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/logback-access.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/threadpool.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/rewrite-compactpath.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/annotations.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/ipaccess.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/log4j-impl.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/stop.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/transactions.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jvm.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/unixsocket-secure.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/setuid.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/home-base-warning.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/hawtio.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/logback-impl.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/mail.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/server.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/infinispan-remote-query.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-store-infinispan-remote.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/sessions.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/cdi-spi.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/bytebufferpool.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/unixsocket-http2c.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jcl-slf4j.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/apache-jstl.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/http2c.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/gcloud.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/slf4j-logback.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/logging-log4j2.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jndi.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/deploy.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/openid.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jsp.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="active" value="true" />
+                <option name="path" value="modules/servlet.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/rewrite.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/logging-log4j.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/rewrite-customizer.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-store-hazelcast-remote.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/threadlimit.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/infinispan-embedded.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/conscrypt.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-store-infinispan-embedded.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/slf4j-simple-impl.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-cache-hash.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jul-slf4j.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/http.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/slf4j-api.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/https.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/http2.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/inetaccess.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/proxy-protocol-ssl.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/spring.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/slf4j-jul.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="active" value="true" />
+                <option name="path" value="modules/webapp.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/debug.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jminix.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/proxy-protocol.mod" />
+              </JettyConfigFile>
+            </list>
+          </option>
+          <base-directory-name>e38079a8-9abb-4cf7-a58c-a6c6a3e078e6</base-directory-name>
+          <option name="myConfigFiles">
+            <list>
+              <JettyConfigFile>
+                <option name="path" value="modules/stats.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-store-gcloud.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jolokia.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/console-capture.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/logging-jul.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/logging-jetty.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/logging-logback.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/alpn.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/ssl.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/apache-jsp.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/cdi-decorate.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/customrequestlog.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jmx-remote.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jaas.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/gzip.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/infinispan-embedded-query.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/infinispan-remote.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/ext.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/proxy.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/unixsocket-forwarded.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/slf4j-log4j.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/log4j2-impl.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-store-jdbc.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/log4j2-api.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/cdi2.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/quickstart.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/debuglog.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jul-impl.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/resources.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/unixsocket-proxy-protocol.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/unixsocket-http.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/flight-recorder.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-store-hazelcast-embedded.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/log4j2-slf4j.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/gcloud-datastore.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-store-cache.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/ssl-reload.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/security.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/unixsocket.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/logging-slf4j.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-store-file.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/requestlog.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/cdi.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="active" value="true" />
+                <option name="path" value="modules/jmx.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-store-mongo.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-cache-null.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/http-forwarded.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jstl.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/lowresources.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/client.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/global-webapp-common.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/decorate.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/servlets.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/slf4j-log4j2.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/plus.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/acceptratelimit.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jamon.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/websocket.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jaspi.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/continuation.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/fcgi.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/connectionlimit.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jdbc.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/logback-access.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/threadpool.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/rewrite-compactpath.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/annotations.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/ipaccess.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/log4j-impl.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/stop.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/transactions.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jvm.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/unixsocket-secure.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/setuid.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/home-base-warning.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/hawtio.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/logback-impl.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/mail.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/server.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/infinispan-remote-query.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-store-infinispan-remote.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/sessions.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/cdi-spi.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/bytebufferpool.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/unixsocket-http2c.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jcl-slf4j.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/apache-jstl.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/http2c.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/gcloud.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/slf4j-logback.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/logging-log4j2.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jndi.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/deploy.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/openid.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jsp.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="active" value="true" />
+                <option name="path" value="modules/servlet.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/rewrite.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/logging-log4j.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/rewrite-customizer.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-store-hazelcast-remote.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/threadlimit.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/infinispan-embedded.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/conscrypt.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-store-infinispan-embedded.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/slf4j-simple-impl.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/session-cache-hash.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jul-slf4j.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/http.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/slf4j-api.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/https.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/http2.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/inetaccess.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/proxy-protocol-ssl.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/spring.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/slf4j-jul.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="active" value="true" />
+                <option name="path" value="modules/webapp.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/debug.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/jminix.mod" />
+              </JettyConfigFile>
+              <JettyConfigFile>
+                <option name="path" value="modules/proxy-protocol.mod" />
+              </JettyConfigFile>
+            </list>
+          </option>
+        </data>
+      </server-settings>
+      <predefined_log_file enabled="true" id="Jetty" />
+      <ConfigurationWrapper VM_VAR="" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <method v="2">
-        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/back/pom.xml" goal="package" />
       </method>
     </configuration>
-    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/front/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -207,21 +1026,21 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="Jetty Server.local" />
       <item itemvalue="JUnit.PersonTest" />
-      <item itemvalue="Kotlin.AppKt" />
-      <item itemvalue="npm.start" />
-      <item itemvalue="JUnit.PersonTest.find person included in name" />
       <item itemvalue="JUnit.DragonTest" />
       <item itemvalue="JUnit.EntityCRUDTest.get all" />
+      <item itemvalue="Kotlin.EmbeddedKt" />
+      <item itemvalue="npm.start" />
+      <item itemvalue="npm.build" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
         <item itemvalue="JUnit.EntityCRUDTest.get all" />
         <item itemvalue="JUnit.DragonTest" />
         <item itemvalue="JUnit.PersonTest" />
-        <item itemvalue="JUnit.PersonTest.find person included in name" />
       </list>
     </recent_temporary>
   </component>
@@ -249,7 +1068,8 @@
       <workItem from="1631280455900" duration="3272000" />
       <workItem from="1632171960848" duration="3117000" />
       <workItem from="1632215272586" duration="4456000" />
-      <workItem from="1632318124469" duration="19328000" />
+      <workItem from="1632318124469" duration="34090000" />
+      <workItem from="1632414808772" duration="6397000" />
     </task>
     <servers />
   </component>

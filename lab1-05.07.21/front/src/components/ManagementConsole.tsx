@@ -2,12 +2,12 @@ import '../resources/App.css'
 import { Layout, Menu } from "antd"
 import { UserOutlined, DingdingOutlined } from '@ant-design/icons'
 import React from "react"
-import { EntitiesURLs, EntityCRUD } from "../api/EntityCRUD"
+import { EntityCRUD, EntitiesURLs } from "../api/EntityCRUD"
 
 
 const ManagementConsole: React.FC = () => {
 
-    fetch('http://localhost:8090/api/persons', { method: 'GET' }).then(res => console.info(res.json()))
+    EntityCRUD.getAll(EntitiesURLs.PERSON).then(data => console.info(data))
 
     return <Layout style={{ minHeight: '100vh' }}>
         <Layout.Sider>
