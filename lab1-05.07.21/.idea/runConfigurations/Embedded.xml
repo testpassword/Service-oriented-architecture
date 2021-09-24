@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="EmbeddedKt" type="JetRunConfigurationType" nameIsGenerated="true">
+  <configuration default="false" name="Embedded" type="JetRunConfigurationType">
     <envs>
       <env name="DATABASE" value="jdbc:postgresql://postgres:root@localhost:5432/soa1" />
       <env name="PORT" value="8080" />

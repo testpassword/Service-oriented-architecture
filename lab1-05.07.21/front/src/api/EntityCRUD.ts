@@ -1,4 +1,4 @@
-const toJson = res => res.text()
+const toJson = res => res.json()
 
 enum EntitiesURLs {
     PERSON = `http://localhost:8080/api/persons`,

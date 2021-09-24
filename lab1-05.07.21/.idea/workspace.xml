@@ -5,215 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62e3dc41-f9ca-40ea-8986-d9cb83080a36" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/asset-manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/css/2.0f750d82.chunk.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/css/2.0f750d82.chunk.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/css/main.8607a8d9.chunk.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/css/main.8607a8d9.chunk.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/2.efce320f.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/2.efce320f.chunk.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/2.efce320f.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/main.40894774.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/main.40894774.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/main.e7675880.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/main.e7675880.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/main.f2e2261d.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/main.f2e2261d.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/runtime-main.d1b9feca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/runtime-main.d1b9feca.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/EmbeddedKt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/EmbeddedKt.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/components/EntityTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/EmbeddedKt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Embedded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/Embedded.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/Embedded.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/StartupParamsHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/StartupParamsHolder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE-jar-with-dependencies.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/META-INF/maven/testpassword/back/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/META-INF/maven/testpassword/back/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/META-INF/back.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/EmbeddedKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/StartupParamsHolder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/AdminServlet$doDelete$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/AdminServlet$doDelete$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/AdminServlet$doPost$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/AdminServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/DragonsServlet$doDelete$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/DragonsServlet$doGet$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/DragonsServlet$doPost$1$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/DragonsServlet$doPost$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/DragonsServlet$doPut$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/DragonsServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/PersonsServlet$doDelete$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/PersonsServlet$doGet$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/PersonsServlet$doPost$1$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/PersonsServlet$doPost$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/PersonsServlet$doPut$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/PersonsServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/WARInitializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/extensions/Db_extKt$isNotBlank$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/extensions/Db_extKt$isPositiveDouble$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/extensions/Db_extKt$isPositiveInt$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/extensions/Db_extKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/extensions/ReqKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/extensions/ResKt$invoke$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/extensions/ResKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Color.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Coordinates$Companion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Coordinates$compareTo$hypotenuse$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Coordinates$recoverFromJSON$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Coordinates$recoverFromJSON$1$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Coordinates.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Dragon$Companion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Dragon$DragonType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Dragon$compareTo$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Dragon$recoverFromJSON$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Dragon$recoverFromJSON$1$2$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Dragon$recoverFromJSON$1$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Dragon$recoverFromJSON$1$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Dragon$recoverFromJSON$1$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Dragon$recoverFromJSON$1$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Dragon$recoverFromJSON$1$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Dragon$recoverFromJSON$1$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Dragon$recoverFromJSON$1$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Dragon.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/JSONRecoverable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Person$Companion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Person$compareTo$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Person$compareTo$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Person$recoverFromJSON$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Person$recoverFromJSON$1$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Person$recoverFromJSON$1$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Person$recoverFromJSON$1$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Person$recoverFromJSON$1$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/models/Person.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/repos/CoordinatesTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/repos/DragonTable$coordinates$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/repos/DragonTable$find with killer weaker then$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/repos/DragonTable$groupByType$$inlined$groupingBy$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/repos/DragonTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/repos/PersonTable$find person included in name$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/repos/PersonTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/annotations-13.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/automaton-1.11-8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/checker-qual-3.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/commons-lang3-3.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/exposed-core-0.34.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/exposed-dao-0.34.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/exposed-java-time-0.34.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/exposed-jdbc-0.34.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/generex-1.0.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/jackson-annotations-2.12.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/jackson-core-2.12.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/jackson-databind-2.12.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/javafaker-1.0.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/javax.servlet-api-3.1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/jetty-http-9.2.15.v20160210.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/jetty-io-9.2.15.v20160210.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/jetty-security-9.2.15.v20160210.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/jetty-server-9.2.15.v20160210.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/jetty-servlet-9.2.15.v20160210.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/jetty-util-9.2.15.v20160210.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/json-20210307.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/khttp-0.1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/kotlin-reflect-1.5.21.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/kotlin-stdlib-1.5.30-RC.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/kotlin-stdlib-common-1.5.30-RC.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/kotlin-stdlib-jdk7-1.4.30.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/kotlin-stdlib-jdk8-1.4.30.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/kotlinx-cli-jvm-0.3.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/kotlinx-coroutines-core-jvm-1.5.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/postgresql-42.2.23.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/slf4j-api-1.7.25.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/lib/snakeyaml-1.23-android.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/META-INF/back.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/EmbeddedKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/StartupParamsHolder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet$doDelete$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet$doDelete$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet$doPost$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doDelete$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doGet$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doPost$1$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doPost$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doPut$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doDelete$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doGet$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doPost$1$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doPost$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doPut$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/WARInitializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/Db_extKt$isNotBlank$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/Db_extKt$isPositiveDouble$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/Db_extKt$isPositiveInt$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/Db_extKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/ReqKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/ResKt$invoke$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/ResKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Color.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Coordinates$Companion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Coordinates$compareTo$hypotenuse$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Coordinates$recoverFromJSON$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Coordinates$recoverFromJSON$1$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Coordinates.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$Companion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$DragonType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$compareTo$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$2$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/JSONRecoverable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Person$Companion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Person$compareTo$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Person$compareTo$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Person$recoverFromJSON$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Person$recoverFromJSON$1$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Person$recoverFromJSON$1$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Person$recoverFromJSON$1$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Person$recoverFromJSON$1$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Person.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/repos/CoordinatesTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/repos/DragonTable$coordinates$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/repos/DragonTable$find with killer weaker then$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/repos/DragonTable$groupByType$$inlined$groupingBy$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/repos/DragonTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/repos/PersonTable$find person included in name$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/repos/PersonTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/surefire-reports/TEST-testpassword.AdminTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/surefire-reports/TEST-testpassword.DragonTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/surefire-reports/TEST-testpassword.EntityCRUDTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/surefire-reports/TEST-testpassword.PersonTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/surefire-reports/testpassword.AdminTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/surefire-reports/testpassword.DragonTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/surefire-reports/testpassword.EntityCRUDTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/surefire-reports/testpassword.PersonTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/META-INF/back.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/AdminTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/DragonTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/Entity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/EntityCRUDTest$WhenMappings.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/EntityCRUDTest$modify existing$getAndConvert$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/EntityCRUDTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/HelpersKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/PersonTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/.env" beforeDir="false" afterPath="$PROJECT_DIR$/front/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/EmbeddedKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/EmbeddedKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/api/EntityCRUD.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/api/EntityCRUD.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/ManagementConsole.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/ManagementConsole.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/tables/AbstractTable.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,6 +33,7 @@
         <option value="TypeScript File" />
         <option value="Kotlin Object" />
         <option value="Kotlin Class" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -295,8 +96,8 @@
       <recent name="$PROJECT_DIR$/back/src/main/webapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/back/src/main/resources" />
       <recent name="$PROJECT_DIR$/front/src/components" />
+      <recent name="$PROJECT_DIR$/back/src/main/resources" />
       <recent name="$PROJECT_DIR$/front/src/resources" />
       <recent name="$PROJECT_DIR$/back/scripts" />
     </key>
@@ -304,7 +105,7 @@
       <recent name="testpassword" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.EmbeddedKt">
+  <component name="RunManager" selected="npm.start">
     <configuration name="DragonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="back" />
       <extension name="coverage">
@@ -1153,7 +954,7 @@
       <item itemvalue="JUnit.PersonTest" />
       <item itemvalue="JUnit.DragonTest" />
       <item itemvalue="JUnit.EntityCRUDTest.get all" />
-      <item itemvalue="Kotlin.EmbeddedKt" />
+      <item itemvalue="Kotlin.Embedded" />
       <item itemvalue="npm.build" />
       <item itemvalue="npm.to_war" />
       <item itemvalue="npm.start" />
@@ -1194,7 +995,7 @@
       <workItem from="1632318124469" duration="34090000" />
       <workItem from="1632414808772" duration="8118000" />
       <workItem from="1632436160561" duration="3370000" />
-      <workItem from="1632475571764" duration="4090000" />
+      <workItem from="1632475571764" duration="24492000" />
     </task>
     <servers />
   </component>
