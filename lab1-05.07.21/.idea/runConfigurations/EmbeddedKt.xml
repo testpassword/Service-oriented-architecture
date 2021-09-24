@@ -2,7 +2,7 @@
   <configuration default="false" name="EmbeddedKt" type="JetRunConfigurationType" nameIsGenerated="true">
     <envs>
       <env name="DATABASE" value="jdbc:postgresql://postgres:root@localhost:5432/soa1" />
-      <env name="PORT" value="8090" />
+      <env name="PORT" value="8080" />
     </envs>
     <option name="MAIN_CLASS_NAME" value="testpassword.EmbeddedKt" />
     <module name="back" />

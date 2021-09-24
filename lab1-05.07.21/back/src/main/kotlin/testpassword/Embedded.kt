@@ -9,5 +9,5 @@ infix operator fun String.minus(removable: String): String = this.replace(remova
 fun main() {
     initDB(System.getenv("DATABASE"))
     initGlobalExceptions()
-    initEmbeddedServer(System.getenv("PORT").toIntOrNull() ?: 8090)
+    initEmbeddedServer(System.getenv("PORT").toIntOrNull() ?: 8080)
 }
