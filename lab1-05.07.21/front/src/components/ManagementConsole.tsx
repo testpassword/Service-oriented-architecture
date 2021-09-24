@@ -1,25 +1,46 @@
 import '../resources/App.css'
 import {Layout, Menu} from "antd"
-import {DingdingOutlined, UserOutlined} from '@ant-design/icons'
+import { DingdingOutlined, UserOutlined } from '@ant-design/icons'
 import React, {useState} from "react"
-import EntityTable from "./EntityTable"
-import {EntitiesURLs} from "../api/EntityCRUD";
+import { EntitiesURLs } from "../api/EntityCRUD"
+import { EntityTable } from "./EntityTable"
+import { buildColumnsByObject } from "./PresentersGenerator"
 
 
 const ManagementConsole: React.FC = () => {
-
-    const [table, setTable] = useState<JSX.Element>(<EntityTable entity={EntitiesURLs.PERSON}/>)
-
+    const personsTable = <EntityTable entity={ EntitiesURLs.PERSONS } columns={ buildColumnsByObject({
+        'id': 'number',
+        'name': 'string',
+        'height': 'number',
+        'weight': 'number',
+        'passportID': 'string',
+        'hairColor': 'string'
+    })}/>
+    const dragonsTable = <EntityTable entity={ EntitiesURLs.DRAGONS } columns={ buildColumnsByObject({
+        'id': 'number',
+        'name': 'string',
+        'creationDate': 'string',
+        'age': 'number',
+        'wingspan': 'number',
+        'color': 'string',
+        'type': 'string',
+        'killer_id': 'number'
+    })}/>
+    const [table, setTable] = useState<JSX.Element>(personsTable)
+    const [menuIsCollapsed, setMenuCollapsed] = useState<boolean>(false)
     return <Layout style={{ minHeight: '100vh' }}>
-        <Layout.Sider>
+        <Layout.Sider collapsible
+                      collapsed={ menuIsCollapsed }
+                      onCollapse={ () => setMenuCollapsed(!menuIsCollapsed) }
+        >
             <Menu defaultSelectedKeys={['1']} mode="inline">
                 <Menu.Item icon={<UserOutlined/>}
-                           onClick={() => setTable(<EntityTable entity={EntitiesURLs.PERSON}/>)}
+                           onClick={() => setTable(personsTable)}
                 >
                     Persons
                 </Menu.Item>
                 <Menu.Item icon={<DingdingOutlined/>}
-                           onClick={() => setTable(<EntityTable entity={EntitiesURLs.DRAGON}/>)}
+                           onClick={() => setTable(dragonsTable)}
                 >
                     Dragons
                 </Menu.Item>

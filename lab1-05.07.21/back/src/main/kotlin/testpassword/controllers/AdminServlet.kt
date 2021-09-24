@@ -9,9 +9,10 @@ import testpassword.extensions.*
 import testpassword.repos.CoordinatesTable
 import testpassword.repos.DragonTable
 import testpassword.repos.PersonTable
+import javax.servlet.annotation.WebServlet
 import javax.servlet.http.*
 
-class AdminServlet: HttpServlet() {
+@WebServlet("/api/admin/*") class AdminServlet: HttpServlet() {
 
     override fun doGet(request: HttpServletRequest, response: HttpServletResponse) {
         response.contentType = "text/html"

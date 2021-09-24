@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react"
 import { EntitiesURLs, EntityCRUD } from "../api/EntityCRUD"
-import { Table, Input, InputNumber, Popconfirm, Form, Typography } from "antd"
+import { Table, Input, InputNumber, Popconfirm, Form, Typography, Layout, Space, Button, message } from "antd"
+import { Content, Header } from "antd/lib/layout/layout"
+import { DeleteOutlined } from "@ant-design/icons"
+import { AntdColumn } from "./PresentersGenerator"
 
-const EditableCell = ({ editing, dataIndex, title, inputType, record, index, children, ...restProps }) =>
+const EditableCell: React.FC<{
+    editing: boolean, dataIndex: string, title: string, inputType: string, record: object, index: number }> =
+    ({ editing, dataIndex, title, inputType, record, index, children, ...restProps }) =>
     <td {...restProps}>
         {editing ?
             <Form.Item
-                name={dataIndex}
+                name={ dataIndex }
                 style={{ margin: 0 }}
                 rules={[{ required: true, message: `Please Input ${title}!` }]}
             >
@@ -16,13 +21,14 @@ const EditableCell = ({ editing, dataIndex, title, inputType, record, index, chi
         }
     </td>
 
-const EntityTable: React.FC<{ entity: EntitiesURLs }> = ({ entity }) => {
+const EntityTable: React.FC<{ entity: EntitiesURLs, columns: Array<object> }> =
+    ({ entity, columns }) => {
 
     const [form] = Form.useForm()
     const [items, setItems] = useState<Array<object>>([])
-    const [columns, setColumns] = useState<Array<object>>([])
     const [isLoading, setIsLoaded] = useState<boolean>(true)
     const [editingKey, setEditingKey] = useState(0)
+    const [selectedRowKeys, setSelectedRowKeys] = useState([])
 
     const isEditing = (record): boolean => record.key === editingKey
 
@@ -34,107 +40,112 @@ const EntityTable: React.FC<{ entity: EntitiesURLs }> = ({ entity }) => {
     }
 
     const save = async (key) => {
-        try {
-            const row = await form.validateFields();
-            const newData = [...columns];
+        setEditingKey(0)
+        /*try {
+            const row = await form.validateFields()
+            const newData = [...columns]
             // @ts-ignore
-            const index = newData.findIndex((item) => key === item.key);
-            if (index > -1) {
-                const item = newData[index];
-                newData.splice(index, 1, { ...item, ...row });
-                setItems(newData);
-                setEditingKey(0);
-            } else {
-                newData.push(row);
-                setItems(newData);
-                setEditingKey(0);
-            }
+            const index = newData.findIndex((item) => key === item.key)
+            if (index > -1) newData.splice(index, 1, { ...newData[index], ...row })
+            else newData.push(row)
+            setItems(newData)
+            setEditingKey(0)
         } catch (errInfo) {
+            // TODO: красочный вывод
             console.log("Validate Failed:", errInfo);
-        }
+        }*/
     }
-
-    const buildColumnsByObject = (obj: object): Array<object> =>
-        [...Object.keys(obj).map(it => ({
-            title: it.toUpperCase(),
-            key: it,
-            dataIndex: it,
-            editable: it !== 'id',
-            sorter: (item1: object, item2: object) => {
-                const a = item1[it]
-                const b = item2[it]
-                const isParamsTypesEquals = (type: string): boolean => [a, b].every(p => typeof p === type)
-                if (isParamsTypesEquals('number')) return a - b
-                if (isParamsTypesEquals('string')) return a.length - b.length
-                if (isParamsTypesEquals('boolean')) return a && b
-                else return undefined
-            }
-        })).filter( it => it !== undefined && it !== null ), {
-            title: "actions",
-            dataIndex: "actions",
-            render: ( _, record ) =>
-                isEditing(record) ?
-                    <span>
-                        <a onClick={() => save(record.key)}
-                           style={{ marginRight: 8}}
-                        >
-                            Save
-                        </a>
-                        <Popconfirm title="Sure to cancel?" onConfirm={cancel}>
-                            <a>
-                                Cancel
-                            </a>
-                        </Popconfirm>
-                    </span>
-                    :
-                    <Typography.Link disabled={editingKey !== 0}
-                                     onClick={() => {
-                                         form.setFieldsValue(record)
-                                         setEditingKey(record.key)
-                                     }}>
-                        Edit
-                    </Typography.Link>
-    }]
 
     // @ts-ignore
     useEffect(() => {
-        EntityCRUD.getAll(entity).then(data => {
+        EntityCRUD.getAll(entity).then( data => {
             setIsLoaded(false)
             // @ts-ignore
             setItems(data.map( it => ({ ...it, key: it.id }) ))
-            // @ts-ignore
-            setColumns(buildColumnsByObject(data[0]))
         })
-    }, [buildColumnsByObject, entity])
+    }, [entity])
 
-    const mergedColumns = columns.map((col) => {
+    // @ts-ignore
+    const mergedColumns = [...columns, {
+        title: "ACTIONS",
+        dataIndex: "actions",
+        render: ( _, record ) =>
+            isEditing(record) ?
+                <span>
+                    <a onClick={ () => save(record.key) }
+                       style={{ marginRight: 8}}
+                    >
+                        Save
+                    </a>
+                    <Popconfirm title="Sure to cancel?" onConfirm={cancel}>
+                        <a>
+                            Cancel
+                        </a>
+                    </Popconfirm>
+                </span>
+                :
+                <Typography.Link disabled={editingKey !== 0}
+                                 onClick={() => {
+                                     form.setFieldsValue(record)
+                                     setEditingKey(record.key)
+                                 }}>
+                    Edit
+                </Typography.Link>
         // @ts-ignore
-        return !col.editable
-            ? col
-            : {
-                ...col,
-                onCell: (record) => ({
-                    record,
-                    // @ts-ignore
-                    inputType: col.dataIndex === "age" ? "number" : "text",
-                    // @ts-ignore
-                    dataIndex: col.dataIndex,
-                    // @ts-ignore
-                    title: col.title,
-                    editing: isEditing(record)
-                })
-            }
+    }].map( (col: AntdColumn) => {
+        return !col.editable ? col : {
+            ...col,
+            onCell: record => ({
+                record,
+                inputType: col.dataIndex === "age" ? "number" : "text",
+                dataIndex: col.dataIndex,
+                title: col.title,
+                editing: isEditing(record)
+            })
+        }
     })
-    return <Form form={ form } component={ false }>
-        <Table columns={ mergedColumns }
-               dataSource={ items }
-               loading={ isLoading }
-               components={{
-                   body: { cell: EditableCell }
-               }}
-               pagination={{ onChange: cancel }}
-        />
-    </Form>
+
+    return <Layout className="site-layout">
+        <Header>
+            <Space size={"middle"}>
+                <Button icon={<DeleteOutlined/>}
+                        ghost={ true }
+                        danger
+                        onClick={ () => {
+                            if (selectedRowKeys.length === 0) message.warning('Nothing is selected')
+                            else Promise.all(selectedRowKeys.map( it =>
+                                EntityCRUD.delete(entity, it) )).then( () => {
+                                    // @ts-ignore
+                                    setItems(items.filter( it => !selectedRowKeys.includes(it.id) ))
+                                    message.success('All entities was deleted')
+                                }
+                            )
+                        } }>
+                    Remove
+                </Button>
+            </Space>
+        </Header>
+        <Content>
+            {/*@ts-ignore*/}
+            <Table columns={ mergedColumns }
+                   rowSelection={{
+                       selectedRowKeys,
+                       /*@ts-ignore*/
+                       onChange: selected => setSelectedRowKeys(selected),
+                       selections: [ Table.SELECTION_ALL, Table.SELECTION_INVERT, Table.SELECTION_NONE ]
+                   }}
+                   dataSource={ items }
+                   loading={ isLoading }
+                   components={{
+                       body: { cell: EditableCell }
+                   }}
+                   pagination={{
+                       onChange: cancel,
+                       position: ["bottomCenter"] }
+                   }
+            />
+        </Content>
+    </Layout>
 }
 
-export default EntityTable
+export { EntityTable }

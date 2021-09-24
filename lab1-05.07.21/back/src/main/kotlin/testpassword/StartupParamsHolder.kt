@@ -30,9 +30,9 @@ object StartupParamsHolder {
         Server(port).apply {
             handler = ServletHandler().apply {
                 mapOf(
-                    AdminServlet::class to "/api/admin",
-                    DragonsServlet::class to "/api/dragons",
-                    PersonsServlet::class to "/api/persons"
+                    AdminServlet::class to "/api/admin/*",
+                    DragonsServlet::class to "/api/dragons/*",
+                    PersonsServlet::class to "/api/persons/*"
                 ).forEach { k, v -> addServletWithMapping(k.java, v) }
             }
         }.start()

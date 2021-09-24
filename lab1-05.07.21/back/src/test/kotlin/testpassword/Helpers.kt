@@ -7,9 +7,9 @@ import testpassword.models.Color
 import testpassword.models.Dragon
 
 enum class Entity(val endpoint: String) {
-    ADMIN("http://localhost:8090/api/admin/"),
-    PERSON("http://localhost:8090/api/persons/"),
-    DRAGON("http://localhost:8090/api/dragons/");
+    ADMIN("http://localhost:8080/api/admin/"),
+    PERSON("http://localhost:8080/api/persons/"),
+    DRAGON("http://localhost:8080/api/dragons/");
 }
 
 fun JSONArray.toJsonObjectsList() = this.let { it.mapIndexed { i, _ -> it.getJSONObject(i) }.toList() }

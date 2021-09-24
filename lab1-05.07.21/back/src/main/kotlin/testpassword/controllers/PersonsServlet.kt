@@ -3,11 +3,12 @@ package testpassword.controllers
 import testpassword.extensions.*
 import testpassword.models.Person
 import testpassword.repos.PersonTable
+import javax.servlet.annotation.WebServlet
 import javax.servlet.http.HttpServlet
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
-class PersonsServlet: HttpServlet() {
+@WebServlet("/api/persons/*") class PersonsServlet: HttpServlet() {
 
     override fun doGet(req: HttpServletRequest, resp: HttpServletResponse) =
         resp {

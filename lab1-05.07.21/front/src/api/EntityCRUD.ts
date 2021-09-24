@@ -1,8 +1,8 @@
 const toJson = res => res.json()
 
 enum EntitiesURLs {
-    PERSON = `http://localhost:8080/api/persons`,
-    DRAGON = `http://localhost:8080/api/dragons`
+    PERSONS = `http://localhost:8080/back-1.0-ULTIMATE/api/persons/`,
+    DRAGONS = `http://localhost:8080/back-1.0-ULTIMATE/api/dragons/`
 }
 
 const EntityCRUD = {

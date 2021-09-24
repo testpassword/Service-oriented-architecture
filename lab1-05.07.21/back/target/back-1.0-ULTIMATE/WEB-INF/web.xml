@@ -7,30 +7,4 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <display-name>Archetype Created Web Application</display-name>
-    <servlet>
-        <servlet-name>admin</servlet-name>
-        <servlet-class>testpassword.controllers.AdminServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>admin</servlet-name>
-        <url-pattern>/api/admin</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>persons</servlet-name>
-        <servlet-class>testpassword.controllers.PersonsServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>persons</servlet-name>
-        <url-pattern>/api/persons</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>dragons</servlet-name>
-        <servlet-class>testpassword.controllers.DragonsServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>dragons</servlet-name>
-        <url-pattern>/api/dragons</url-pattern>
-    </servlet-mapping>
 </web-app>

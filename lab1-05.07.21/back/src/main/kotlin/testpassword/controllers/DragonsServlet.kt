@@ -4,11 +4,12 @@ import testpassword.extensions.*
 import testpassword.models.Dragon
 import testpassword.models.Person
 import testpassword.repos.DragonTable
+import javax.servlet.annotation.WebServlet
 import javax.servlet.http.HttpServlet
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
-class DragonsServlet: HttpServlet() {
+@WebServlet("/api/dragons/*") class DragonsServlet: HttpServlet() {
 
     override fun doGet(req: HttpServletRequest, resp: HttpServletResponse) =
         resp {
