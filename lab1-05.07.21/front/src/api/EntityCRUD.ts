@@ -1,8 +1,10 @@
 const toJson = res => res.json()
 
+// change both URLs to http://localhost:8080/back-1.0-ULTIMATE/... before deploy to WAR
+
 enum EntitiesURLs {
-    PERSONS = `http://localhost:8080/back-1.0-ULTIMATE/api/persons/`,
-    DRAGONS = `http://localhost:8080/back-1.0-ULTIMATE/api/dragons/`
+    PERSONS = `http://localhost:8080/api/persons/`,
+    DRAGONS = `http://localhost:8080/api/dragons/`
 }
 
 const EntityCRUD = {

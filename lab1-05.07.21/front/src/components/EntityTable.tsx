@@ -1,34 +1,74 @@
 import React, { useEffect, useState } from "react"
 import { EntitiesURLs, EntityCRUD } from "../api/EntityCRUD"
-import { Table, Input, InputNumber, Popconfirm, Form, Typography, Layout, Space, Button, message } from "antd"
+import { Table, Input, Popconfirm, Form, Typography, Layout, Space, Button, message, Popover } from "antd"
 import { Content, Header } from "antd/lib/layout/layout"
-import { DeleteOutlined } from "@ant-design/icons"
-import { AntdColumn } from "./PresentersGenerator"
+import { CloseOutlined, DeleteOutlined, PlusOutlined, SearchOutlined } from "@ant-design/icons"
+import { AntdColumn, buildColumnsByObject, buildCreationForm } from "./PresentersGenerator"
+import Highlighter from 'react-highlight-words'
+import EditableCell from "./EditableCell"
 
-const EditableCell: React.FC<{
-    editing: boolean, dataIndex: string, title: string, inputType: string, record: object, index: number }> =
-    ({ editing, dataIndex, title, inputType, record, index, children, ...restProps }) =>
-    <td {...restProps}>
-        {editing ?
-            <Form.Item
-                name={ dataIndex }
-                style={{ margin: 0 }}
-                rules={[{ required: true, message: `Please Input ${title}!` }]}
-            >
-                { inputType === "number" ? <InputNumber /> : <Input /> }
-            </Form.Item>
-            : children
-        }
-    </td>
-
-const EntityTable: React.FC<{ entity: EntitiesURLs, columns: Array<object> }> =
-    ({ entity, columns }) => {
+const EntityTable: React.FC<{ entity: EntitiesURLs, template: object }> = ({ entity, template }) => {
 
     const [form] = Form.useForm()
     const [items, setItems] = useState<Array<object>>([])
     const [isLoading, setIsLoaded] = useState<boolean>(true)
     const [editingKey, setEditingKey] = useState(0)
-    const [selectedRowKeys, setSelectedRowKeys] = useState([])
+    const [selectedRowKeys, setSelectedRowKeys] = useState<Array<number>>([])
+    const [isFormVisible, setFormVisibility] = useState<boolean>(false)
+    const [columns, setColumns] = useState<Array<object>>(buildColumnsByObject(template))
+    const [searchText, setSearchText] = useState<string>('')
+    const [searchedColumn, setSearchedColumn] = useState<string>('')
+
+    const getColumnSearchProps = dataIndex => ({
+        filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
+            <div style={{ padding: 8 }}>
+                <Input placeholder={ `Search ${dataIndex}` }
+                       value={ selectedKeys[0] }
+                       onChange={ e => setSelectedKeys(e.target.value ? [e.target.value] : []) }
+                       onPressEnter={ () => handleSearch(selectedKeys, confirm, dataIndex) }
+                       style={{ marginBottom: 8, display: 'block' }}
+                />
+                <Space>
+                    <Button type="primary"
+                            icon={ <SearchOutlined/> }
+                            onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
+                            size="small"
+                            style={{ width: 90 }}
+                    >
+                        Search
+                    </Button>
+                    <Button onClick={() => handleReset(clearFilters)}
+                            size="small"
+                            style={{ width: 90 }}
+                    >
+                        Reset
+                    </Button>
+                </Space>
+            </div>
+        ),
+        filterIcon: filtered => <SearchOutlined style={{ color: filtered ? '#1890ff' : undefined }}/>,
+        onFilter: (value, record) => record[dataIndex] ? record[dataIndex].toString().toLowerCase().includes(value.toLowerCase()) : '',
+        render: (text: string) =>
+            searchedColumn === dataIndex ?
+                <Highlighter
+                    highlightStyle={{ backgroundColor: '#ffc069', padding: 0 }}
+                    searchWords={ [searchText] }
+                    autoEscape
+                    textToHighlight={ text?.toString() ?? '' }
+                />
+             : text
+    })
+
+    const handleSearch = (selectedKeys: Array<string>, confirm: Function, dataIndex: string) => {
+        confirm()
+        setSearchText(selectedKeys[0])
+        setSearchedColumn(dataIndex)
+    }
+
+    const handleReset = clearFilters => {
+        clearFilters()
+        setSearchText('')
+    }
 
     const isEditing = (record): boolean => record.key === editingKey
 
@@ -56,7 +96,6 @@ const EntityTable: React.FC<{ entity: EntitiesURLs, columns: Array<object> }> =
         }*/
     }
 
-    // @ts-ignore
     useEffect(() => {
         EntityCRUD.getAll(entity).then( data => {
             setIsLoaded(false)
@@ -66,7 +105,7 @@ const EntityTable: React.FC<{ entity: EntitiesURLs, columns: Array<object> }> =
     }, [entity])
 
     // @ts-ignore
-    const mergedColumns = [...columns, {
+    const mergedColumns = [...columns.map( (col: AntdColumn) => ({ ...col, ...getColumnSearchProps(col.dataIndex) })), {
         title: "ACTIONS",
         dataIndex: "actions",
         render: ( _, record ) =>
@@ -107,20 +146,42 @@ const EntityTable: React.FC<{ entity: EntitiesURLs, columns: Array<object> }> =
 
     return <Layout className="site-layout">
         <Header>
-            <Space size={"middle"}>
-                <Button icon={<DeleteOutlined/>}
+            <Space>
+                <Popover
+                    trigger="click"
+                    content={
+                        <div>
+                            { buildCreationForm(template) }
+                            <Button shape="round"
+                                    icon={<CloseOutlined/>}
+                                    size="small"
+                                    onClick={() => setFormVisibility(false)}
+                            />
+                        </div>
+                    }
+                    visible={ isFormVisible }>
+                    <Button type="primary"
+                            icon={ <PlusOutlined/> }
+                            ghost={ true }
+                            onClick={ () => {
+                                setFormVisibility(true)
+                            }}
+                    >
+                        Add record
+                    </Button>
+                </Popover>
+                <Button icon={ <DeleteOutlined/> }
                         ghost={ true }
                         danger
                         onClick={ () => {
                             if (selectedRowKeys.length === 0) message.warning('Nothing is selected')
                             else Promise.all(selectedRowKeys.map( it =>
                                 EntityCRUD.delete(entity, it) )).then( () => {
-                                    // @ts-ignore
-                                    setItems(items.filter( it => !selectedRowKeys.includes(it.id) ))
-                                    message.success('All entities was deleted')
-                                }
-                            )
-                        } }>
+                                // @ts-ignore
+                                setItems(items.filter( it => !selectedRowKeys.includes(it.id) ))
+                                message.success('All entities was deleted')
+                            })
+                        }}>
                     Remove
                 </Button>
             </Space>
@@ -148,4 +209,4 @@ const EntityTable: React.FC<{ entity: EntitiesURLs, columns: Array<object> }> =
     </Layout>
 }
 
-export { EntityTable }
+export default EntityTable

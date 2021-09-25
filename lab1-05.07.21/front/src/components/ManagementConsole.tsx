@@ -3,20 +3,19 @@ import {Layout, Menu} from "antd"
 import { DingdingOutlined, UserOutlined } from '@ant-design/icons'
 import React, {useState} from "react"
 import { EntitiesURLs } from "../api/EntityCRUD"
-import { EntityTable } from "./EntityTable"
-import { buildColumnsByObject } from "./PresentersGenerator"
+import EntityTable from "./EntityTable"
 
 
 const ManagementConsole: React.FC = () => {
-    const personsTable = <EntityTable entity={ EntitiesURLs.PERSONS } columns={ buildColumnsByObject({
+    const personsTable = <EntityTable entity={ EntitiesURLs.PERSONS } template={{
         'id': 'number',
         'name': 'string',
         'height': 'number',
         'weight': 'number',
         'passportID': 'string',
         'hairColor': 'string'
-    })}/>
-    const dragonsTable = <EntityTable entity={ EntitiesURLs.DRAGONS } columns={ buildColumnsByObject({
+    }}/>
+    const dragonsTable = <EntityTable entity={ EntitiesURLs.DRAGONS } template={{
         'id': 'number',
         'name': 'string',
         'creationDate': 'string',
@@ -25,7 +24,7 @@ const ManagementConsole: React.FC = () => {
         'color': 'string',
         'type': 'string',
         'killer_id': 'number'
-    })}/>
+    }}/>
     const [table, setTable] = useState<JSX.Element>(personsTable)
     const [menuIsCollapsed, setMenuCollapsed] = useState<boolean>(false)
     return <Layout style={{ minHeight: '100vh' }}>

@@ -5,57 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62e3dc41-f9ca-40ea-8986-d9cb83080a36" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/2.658e2462.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/2.658e2462.chunk.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/2.658e2462.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/main.e4316381.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/main.e4316381.chunk.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/components/EditableCell.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/AdminServlet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/AdminServlet.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/DragonsServlet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/DragonsServlet.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/PersonsServlet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/PersonsServlet.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/webapp/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/webapp/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE-jar-with-dependencies.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE.war" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/AdminServlet$doDelete$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/AdminServlet$doDelete$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/AdminServlet$doDelete$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/AdminServlet$doDelete$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/AdminServlet$doPost$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/AdminServlet$doPost$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/AdminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/AdminServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/DragonsServlet$doDelete$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/DragonsServlet$doDelete$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/DragonsServlet$doGet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/DragonsServlet$doGet$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/DragonsServlet$doPost$1$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/DragonsServlet$doPost$1$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/DragonsServlet$doPost$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/DragonsServlet$doPost$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/DragonsServlet$doPut$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/DragonsServlet$doPut$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/DragonsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/DragonsServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/PersonsServlet$doDelete$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/PersonsServlet$doDelete$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/PersonsServlet$doGet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/PersonsServlet$doGet$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/PersonsServlet$doPost$1$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/PersonsServlet$doPost$1$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/PersonsServlet$doPost$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/PersonsServlet$doPost$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/PersonsServlet$doPut$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/PersonsServlet$doPut$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/PersonsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/WEB-INF/classes/testpassword/controllers/PersonsServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet$doDelete$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet$doDelete$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet$doDelete$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet$doDelete$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet$doPost$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet$doPost$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doDelete$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doDelete$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doGet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doGet$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doPost$1$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doPost$1$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doPost$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doPost$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doPut$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doPut$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doDelete$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doDelete$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doGet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doGet$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doPost$1$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doPost$1$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doPost$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doPost$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doPut$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doPut$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/PersonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/test-classes/testpassword/PersonTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/api/EntityCRUD.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/api/EntityCRUD.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/EntityTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/EntityTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/ManagementConsole.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/ManagementConsole.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +104,7 @@
       <recent name="testpassword" />
     </key>
   </component>
-  <component name="RunManager" selected="Jetty Server.local">
+  <component name="RunManager" selected="npm.start">
     <configuration name="DragonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="back" />
       <extension name="coverage">
@@ -1058,7 +1015,7 @@
       <workItem from="1632414808772" duration="8118000" />
       <workItem from="1632436160561" duration="3370000" />
       <workItem from="1632475571764" duration="33086000" />
-      <workItem from="1632514852832" duration="8266000" />
+      <workItem from="1632514852832" duration="15165000" />
     </task>
     <servers />
   </component>
