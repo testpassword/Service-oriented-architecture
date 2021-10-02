@@ -1,4 +1,10 @@
-import { EntitiesURLs, toJson } from "./EntityCRUD"
+import { EntitiesURLs, toJson } from "./EntitiesCRUD_API"
+
+const COLOR = {
+    GREEN: 'green',
+    YELLOW: 'yellow',
+    BROWN: 'gold'
+}
 
 const PERSONS_API = {
 
@@ -7,4 +13,4 @@ const PERSONS_API = {
     },
 }
 
-export default PERSONS_API
+export { PERSONS_API, COLOR }

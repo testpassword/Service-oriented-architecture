@@ -1,4 +1,11 @@
-import { EntitiesURLs, toJson } from "./EntityCRUD"
+import { EntitiesURLs, toJson } from "./EntitiesCRUD_API"
+
+const DRAGON_TYPE = {
+    WATER: 'geekblue',
+    AIR: 'blue',
+    FIRE: 'volcano',
+    UNKNOWN: 'magenta'
+}
 
 const DRAGONS_API = {
 
@@ -11,4 +18,4 @@ const DRAGONS_API = {
     }
 }
 
-export default DRAGONS_API
+export { DRAGONS_API, DRAGON_TYPE }

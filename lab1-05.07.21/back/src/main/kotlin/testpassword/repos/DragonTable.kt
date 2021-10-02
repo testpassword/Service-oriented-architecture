@@ -24,5 +24,6 @@ object DragonTable: LongIdTable("dragon") {
 
     fun groupByType(): Map<Dragon.DragonType, Int> = Dragon.all().groupingBy { it.type }.eachCount()
 
-    infix fun `find with killer weaker then`(candidate: Person): Set<Dragon> = Dragon.find { killer less candidate }.toSet()
+    infix fun `find with killer weaker then`(candidate: Person): Set<Dragon> =
+        Dragon.all().filter { it.killer != null }.filter { it.killer!! < candidate }.toSet()
 }

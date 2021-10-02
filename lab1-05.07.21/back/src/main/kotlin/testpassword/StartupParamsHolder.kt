@@ -3,12 +3,11 @@ package testpassword
 import org.eclipse.jetty.server.Server
 import org.eclipse.jetty.servlet.ServletHandler
 import org.jetbrains.exposed.sql.Database
+import org.json.JSONArray
 import testpassword.controllers.AdminServlet
 import testpassword.controllers.DragonsServlet
 import testpassword.controllers.PersonsServlet
 import testpassword.extensions.Res
-import testpassword.extensions.invoke
-import testpassword.extensions.json
 import kotlin.reflect.KClass
 
 object StartupParamsHolder {
@@ -23,7 +22,7 @@ object StartupParamsHolder {
     }
 
     fun initGlobalExceptions() {
-        GLOBAL_EXCEPTION_HANDLERS[NullPointerException::class] = json()("msg" to "required entity didn't exists") to Res.SC_NOT_FOUND
+        GLOBAL_EXCEPTION_HANDLERS[NullPointerException::class] = JSONArray() to Res.SC_OK
     }
 
     fun initEmbeddedServer(port: Int) =

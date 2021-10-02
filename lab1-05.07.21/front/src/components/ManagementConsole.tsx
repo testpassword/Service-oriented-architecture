@@ -1,29 +1,40 @@
 import '../resources/App.css'
 import {Layout, Menu} from "antd"
 import { DingdingOutlined, UserOutlined } from '@ant-design/icons'
-import React, {useState} from "react"
-import { EntitiesURLs } from "../api/EntityCRUD"
+import React, { useState } from "react"
+import { EntitiesURLs } from "../api/EntitiesCRUD_API"
 import EntityTable from "./EntityTable"
+import { COLOR } from "../api/Persons"
+import { DRAGON_TYPE } from "../api/Dragons"
 
 
 const ManagementConsole: React.FC = () => {
     const personsTable = <EntityTable entity={ EntitiesURLs.PERSONS } template={{
-        'id': 'number',
-        'name': 'string',
-        'height': 'number',
-        'weight': 'number',
-        'passportID': 'string',
-        'hairColor': 'string'
+        'id': { type: 'number' },
+        'name': { type: 'string' },
+        'height': { type: 'number' },
+        'weight': { type: 'number' },
+        'passportID': { type: 'string' },
+        'hairColor': {
+            type: 'enum',
+            vals: Object.keys(COLOR)
+        }
     }}/>
-    const dragonsTable = <EntityTable entity={ EntitiesURLs.DRAGONS } template={{
-        'id': 'number',
-        'name': 'string',
-        'creationDate': 'string',
-        'age': 'number',
-        'wingspan': 'number',
-        'color': 'string',
-        'type': 'string',
-        'killer_id': 'number'
+    const dragonsTable = <EntityTable entity={EntitiesURLs.DRAGONS} template={{
+        'id': { type: 'number' },
+        'name': { type: 'string' },
+        'creationDate': { type: 'date' },
+        'age': { type: 'number' },
+        'wingspan': { type: 'number' },
+        'color': {
+            type: 'enum',
+            vals: Object.keys(COLOR)
+        },
+        'type': {
+            type: 'enum',
+            vals: Object.keys(DRAGON_TYPE)
+        },
+        'killer_id': { type: 'number'}
     }}/>
     const [table, setTable] = useState<JSX.Element>(personsTable)
     const [menuIsCollapsed, setMenuCollapsed] = useState<boolean>(false)
