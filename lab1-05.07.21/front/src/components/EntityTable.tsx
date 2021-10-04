@@ -70,9 +70,9 @@ const EntityTable: React.FC<{ entity: EntitiesURLs, template: object }> =
 
     useEffect(() => {
         EntitiesCRUD_API.getAll(entity)
-            .then( data => {
+            .then( formData => {
                 setIsLoaded(false)
-                setItems(data.map( it => {
+                setItems(formData.map( it => {
                     let expanded = { ...it, key: it.id }
                     if (entity.split('/').slice(-2)[0] === 'dragons') {
                         expanded['x'] = it.coordinates.x

@@ -16,5 +16,24 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
+    <data-source name="helios" uuid="5f7b5ee0-594e-45d4-b83a-626b637e4b0a">
+      <database-info product="PostgreSQL" version="9.6.1" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.22" dbms="POSTGRES" exact-version="9.6.1" exact-driver-version="42.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>s265570</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+      <ssh-properties>
+        <enabled>true</enabled>
+        <ssh-config-id>221d8484-dd89-43f9-9adb-a5e0f512dbd1</ssh-config-id>
+      </ssh-properties>
+    </data-source>
   </component>
 </project>

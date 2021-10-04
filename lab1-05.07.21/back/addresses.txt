@@ -1,0 +1,3 @@
+LOCAL_EMBEDDED: http://localhost:9090/api/
+LOCAL_WAR: http://localhost:9090/back-1.0-ULTIMATE/api/
+HELIOS: http://localhost:15555/back-1.0-ULTIMATE/api

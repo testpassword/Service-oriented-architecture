@@ -5,12 +5,11 @@ import khttp.responses.Response
 import org.json.JSONArray
 import testpassword.models.Color
 import testpassword.models.Dragon
-import kotlin.random.Random
 
 enum class Entity(val endpoint: String) {
-    ADMIN("http://localhost:8080/api/admin/"),
-    PERSON("http://localhost:8080/api/persons/"),
-    DRAGON("http://localhost:8080/api/dragons/");
+    ADMIN("http://localhost:15555/back-1.0-ULTIMATE/api/admin/"),
+    PERSON("http://localhost:15555/back-1.0-ULTIMATE/api/persons/"),
+    DRAGON("http://localhost:15555/back-1.0-ULTIMATE/api/dragons/");
 }
 
 fun JSONArray.toJsonObjectsList() = this.let { it.mapIndexed { i, _ -> it.getJSONObject(i) }.toList() }
