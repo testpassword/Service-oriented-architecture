@@ -5,32 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62e3dc41-f9ca-40ea-8986-d9cb83080a36" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/addresses.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/scripts/forward_port.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/scripts/start_on_jetty.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/main.48be26a6.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/main.48be26a6.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/main.4a233f1b.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/webapp/static/js/main.4a233f1b.chunk.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/scripts/kill_frozen.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/webapp/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/webapp/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/StartupParamsHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/StartupParamsHolder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/DragonsServlet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/DragonsServlet.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/PersonsServlet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/PersonsServlet.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/extensions/Req.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/extensions/Req.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/extensions/Res.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/extensions/Res.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/extensions/db_ext.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/extensions/db_ext.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/src/test/kotlin/testpassword/Helpers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/test/kotlin/testpassword/Helpers.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE-jar-with-dependencies.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE.war" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/back-1.0-ULTIMATE/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/StartupParamsHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/StartupParamsHolder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doDelete$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doDelete$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doGet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doGet$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doPost$1$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doPost$1$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doPost$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doPost$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doPut$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doPut$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doDelete$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doDelete$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doGet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doGet$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doPost$1$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doPost$1$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doPost$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doPost$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doPut$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doPut$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/ReqKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/ReqKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/ResKt$invoke$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/ResKt$invoke$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/ResKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/ResKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/JSONRecoverable.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/models/JSONRecoverable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/test-classes/testpassword/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/HelpersKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/test-classes/testpassword/HelpersKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/рефакторинг_лаб1_отчёт.pages" beforeDir="false" afterPath="$PROJECT_DIR$/docs/рефакторинг_лаб1_отчёт.pages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/api/EntitiesCRUD_API.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/api/EntitiesCRUD_API.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/EntityTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/EntityTable.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,9 +49,9 @@
       <list>
         <option value="Kotlin File" />
         <option value="Kotlin Object" />
-        <option value="Kotlin Class" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -122,7 +123,7 @@
       <recent name="testpassword" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.EntityCRUDTest.add new">
+  <component name="RunManager" selected="Kotlin.Embedded">
     <configuration name="AdminTest.create tables in database" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="back" />
       <extension name="coverage">
@@ -171,7 +172,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EntityCRUDTest.modify existing" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+    <configuration name="EntityCRUDTest.modify existing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="back" />
       <extension name="coverage">
         <pattern>
@@ -992,6 +993,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EntityCRUDTest.modify existing" />
         <item itemvalue="JUnit.EntityCRUDTest.add new" />
         <item itemvalue="JUnit.AdminTest.webapp is available" />
         <item itemvalue="JUnit.AdminTest.create tables in database" />
@@ -1033,7 +1035,7 @@
       <workItem from="1633077317141" duration="6447000" />
       <workItem from="1633195191381" duration="16309000" />
       <workItem from="1633266593573" duration="14911000" />
-      <workItem from="1633294480124" duration="18540000" />
+      <workItem from="1633294480124" duration="29436000" />
     </task>
     <servers />
   </component>

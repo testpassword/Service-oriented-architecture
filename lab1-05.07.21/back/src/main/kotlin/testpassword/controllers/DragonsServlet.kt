@@ -1,5 +1,6 @@
 package testpassword.controllers
 
+import testpassword.NotAcceptableKeyFoundException
 import testpassword.extensions.*
 import testpassword.models.Dragon
 import testpassword.models.Person
@@ -11,21 +12,25 @@ import javax.servlet.http.HttpServletResponse
 
 @WebServlet("/api/dragons/*") class DragonsServlet: HttpServlet() {
 
+    val acceptableKeys = setOf("name", "coordinates", "creationDate", "age", "wingspan", "color", "type", "killer")
+
     override fun doGet(req: HttpServletRequest, resp: HttpServletResponse) =
         resp {
             with(req.subpath) {
                 when (this) {
                     "grouped_by_type" -> json()(*DragonTable.groupByType().map { it.key.toString() to it.value }.toTypedArray()) to Res.SC_OK
                     "find_with_killer_weaker_then" -> DragonTable `find with killer weaker then` Person.findById(req["killer_id"].toLong())!! to Res.SC_OK
-                    "" -> Dragon.all().toSet().map(Dragon::transformToJSON) to Res.SC_OK
+                    "" -> Dragon.paginate(req.paginationPointer).toSet().map(Dragon::transformToJSON) to Res.SC_OK
                     else -> Dragon.findById(req.id)!!.transformToJSON() to Res.SC_OK
                 }
             }
         }
 
+    // по принципу работы это должен быть PATCH, но Jetty его не поддерживает
     override fun doPut(req: HttpServletRequest, resp: HttpServletResponse) =
         resp {
             with(req.json) {
+                if (keySet().any { it !in acceptableKeys }) throw NotAcceptableKeyFoundException(keySet().filter { it !in acceptableKeys }.toSet())
                 if (this.isEmpty) "Nothing to modify" to Res.SC_NO_CONTENT
                 else json()(
                     "msg" to "successfully modified",

@@ -18,11 +18,7 @@ operator fun Res.invoke(customExceptionHandlers: Map<KClass<out Exception>, Pair
         } catch (e: Exception) {
             (customExceptionHandlers + GLOBAL_EXCEPTION_HANDLERS)[e::class]
                 ?.let { it.first.toString() to it.second }
-                ?: (json()(
-                    "msg" to e.localizedMessage,
-                    "error" to e.toString(),
-                    "stackTrace" to e.stackTraceToString()
-                    ) to Res.SC_BAD_REQUEST)
+                ?: (json()("error" to e.localizedMessage) to Res.SC_BAD_REQUEST)
         }
         addHeader("Access-Control-Allow-Origin", "*")
         status = code

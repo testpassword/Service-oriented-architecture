@@ -14,3 +14,6 @@ fun <T: LongEntity> LongEntityClass<T>.removeByIds(vararg ids: Number) = getById
 val isPositiveInt: SqlExpressionBuilder.(Column<Int>) -> Op<Boolean> = { it greater 0 }
 val isPositiveDouble: SqlExpressionBuilder.(Column<Double>) -> Op<Boolean> = { it greater 0 }
 val isNotBlank: SqlExpressionBuilder.(Column<String>) -> Op<Boolean> = { it neq "" }
+
+fun <T: LongEntity> LongEntityClass<T>.paginate(pointer: Pair<Int, Long>?) =
+    this.all().let { if (pointer != null) it.limit(pointer.first, pointer.second) else it }
