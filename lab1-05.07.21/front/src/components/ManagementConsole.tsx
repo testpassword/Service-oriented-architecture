@@ -1,5 +1,5 @@
 import '../resources/App.css'
-import {Layout, Menu} from "antd"
+import { Layout, Menu } from "antd"
 import { DingdingOutlined, UserOutlined } from '@ant-design/icons'
 import React, { useState } from "react"
 import { EntitiesURLs } from "../api/EntitiesCRUD_API"
@@ -20,7 +20,7 @@ const ManagementConsole: React.FC = () => {
             vals: Object.keys(COLOR)
         }
     }}/>
-    const dragonsTable = <EntityTable entity={EntitiesURLs.DRAGONS} template={{
+    const dragonsTable = <EntityTable entity={ EntitiesURLs.DRAGONS } template={{
         'id': { type: 'number' },
         'name': { type: 'string' },
         'creationDate': { type: 'date' },
@@ -34,7 +34,9 @@ const ManagementConsole: React.FC = () => {
             type: 'enum',
             vals: Object.keys(DRAGON_TYPE)
         },
-        'killer_id': { type: 'number'}
+        'x': { type: 'number' },
+        'y': { type: 'number' },
+        'killerID': { type: 'number' }
     }}/>
     const [table, setTable] = useState<JSX.Element>(personsTable)
     const [menuIsCollapsed, setMenuCollapsed] = useState<boolean>(false)

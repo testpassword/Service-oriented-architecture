@@ -2,6 +2,7 @@ package testpassword.models
 
 import org.jetbrains.exposed.dao.*
 import org.jetbrains.exposed.dao.id.EntityID
+import org.json.JSONException
 import org.json.JSONObject
 import testpassword.repos.DragonTable
 import java.time.LocalDateTime
@@ -26,7 +27,7 @@ class Dragon(id: EntityID<Long>): LongEntity(id), Comparable<Dragon>, JSONRecove
                 { name = changes.getString("name") },
                 {
                     coordinates = changes.getJSONObject("coordinates").let {
-                        if (it.keySet().contains("coordinatesId")) Coordinates.findById(it.getLong("coordinatesId"))!!
+                        if (it.keySet().contains("coordinatesID")) Coordinates.findById(it.getLong("coordinatesID"))!!
                         else {
                             Coordinates.new {
                                 x = it.getDouble("x")
@@ -40,8 +41,10 @@ class Dragon(id: EntityID<Long>): LongEntity(id), Comparable<Dragon>, JSONRecove
                 { wingspan = changes.getDouble("wingspan") },
                 { color = Color.valueOf(changes.getString("color")) },
                 { type = DragonType.valueOf(changes.getString("type")) },
-                { killer = Person.findById(changes.getLong("killer_id")) }
             ).forEach { runCatching(it) }
+            // we should catch JSONException if we didn't modify killerID, but shouldn't catch NullPointerException if killer didn't exists
+            try { Person.findById(changes.getLong("killerID"))?.let { killer = it } ?: throw NullPointerException() }
+            catch (e: JSONException) {}
         }
 
     override fun transformToJSON(): JSONObject =
@@ -54,7 +57,7 @@ class Dragon(id: EntityID<Long>): LongEntity(id), Comparable<Dragon>, JSONRecove
             put("wingspan", wingspan)
             put("color", color.toString())
             put("type", type.toString())
-            killer?.let { put("killer", it.transformToJSON()) }
+            killer?.let { put("killerID", it.id) }
         }
 
     enum class DragonType { WATER, AIR, FIRE, UNKNOWN }

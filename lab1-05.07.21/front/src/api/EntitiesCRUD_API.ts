@@ -3,11 +3,15 @@ const toJson = res => {
     else throw new Error(res.json())
 }
 
-// change both URLs to http://localhost:8080/back-1.0-ULTIMATE/... before deploy to WAR
+// change both URLs to http://localhost:9090/back-1.0-ULTIMATE/... before deploy to WAR
 
+/* да, правильнее было бы пробрасывать корень урла через REACT_APP_ROOT_URL, но, к сожалению,
+enum TypeScript должен быть известен во время сборки, поэтому переменные не подходят, а мне очень уж хотелось
+попробовать enum
+ */
 enum EntitiesURLs {
-    PERSONS = `http://localhost:8080/api/persons/`,
-    DRAGONS = `http://localhost:8080/api/dragons/`
+    PERSONS = `http://localhost:9090/back-1.0-ULTIMATE/api/persons/`,
+    DRAGONS = `http://localhost:9090/back-1.0-ULTIMATE/api/dragons/`
 }
 
 const EntitiesCRUD_API = {

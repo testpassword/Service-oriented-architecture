@@ -8,6 +8,7 @@ import testpassword.controllers.AdminServlet
 import testpassword.controllers.DragonsServlet
 import testpassword.controllers.PersonsServlet
 import testpassword.extensions.Res
+import testpassword.extensions.json
 import kotlin.reflect.KClass
 
 object StartupParamsHolder {
@@ -22,7 +23,7 @@ object StartupParamsHolder {
     }
 
     fun initGlobalExceptions() {
-        GLOBAL_EXCEPTION_HANDLERS[NullPointerException::class] = JSONArray() to Res.SC_OK
+        GLOBAL_EXCEPTION_HANDLERS[NullPointerException::class] = json("msg" to "entity with requested id didn't exist") to Res.SC_NOT_FOUND
     }
 
     fun initEmbeddedServer(port: Int) =

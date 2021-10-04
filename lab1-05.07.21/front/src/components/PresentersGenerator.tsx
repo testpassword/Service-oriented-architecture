@@ -39,36 +39,37 @@ const buildColumnsByObject = (template: object): Array<AntdColumn> =>
  * Creates Antd.Form by template
  * @param template - object which contains column name and it's type
  * @param onFinish - action which execute on 'Submit` click
- * @param enumFields - defines which Form.Item was a <RadioInput/>, contains Form.Item name and values
  * @param requiredFields - defines which Form.Item was required for fill
+ * @param filler - fill defaultValue in form by filler object
  */
 const buildCreationForm = (template: object,
                            onFinish: (any) => void,
-                           requiredFields: Array<string> = []): JSX.Element =>
-    <Form onFinish={ onFinish }>
-        {
-            Object.keys(template).filter( it => it.toLowerCase() !== 'id' ).map( it => {
-
-                const getInput = (templateField: object): React.FC => {
-                    if (templateField.type === 'enum') return <Radio.Group optionType="button" options={template[it].vals}/>
-                    if (templateField.type === 'number') return <InputNumber/>
-                    if (templateField.type === 'date') return <DatePicker format={"DD.MM.YYYY"} defaultValue={ moment() }/>
-                    else return <Input/>
-                }
-                return <Form.Item label={it.toLowerCase()}
-                                  name={ it }
-                                  rules={[{required: requiredFields.includes(it)}]}>
-                    { getInput(template[it]) }
-                       </Form.Item>
-                }
-            )
-        }
-        <Form.Item>
-            <Button type="primary"
-                    htmlType="submit">
-                Submit
-            </Button>
-        </Form.Item>
+                           requiredFields: Array<string> = [],
+                           filler: object = {}): JSX.Element =>
+    <Form onFinish={onFinish}> {
+        Object.keys(template).filter(it => it.toLowerCase() !== 'id').map(it => {
+            const getInput = (templateField: object): React.FC => {
+                if (templateField.type === 'enum') return <Radio.Group optionType="button"
+                                                                       defaultValue={ filler[it] }
+                                                                       options={ template[it].vals }/>
+                if (templateField.type === 'number') return <InputNumber defaultValue={ filler[it] }/>
+                if (templateField.type === 'date') return <DatePicker format={ "DD.MM.YYYY" }
+                                                                      defaultValue={ moment() }/>
+                else return <Input defaultValue={ filler[it] }/>
+            }
+            return <Form.Item label={ it.toLowerCase() }
+                              name={ it }
+                              rules={ [{required: requiredFields.includes(it)}] }>
+                { getInput( template[it]) }
+            </Form.Item>
+        })
+    }
+    <Form.Item>
+        <Button type="primary"
+                htmlType="submit">
+            Submit
+        </Button>
+    </Form.Item>
     </Form>
 
 export { buildColumnsByObject, buildCreationForm }

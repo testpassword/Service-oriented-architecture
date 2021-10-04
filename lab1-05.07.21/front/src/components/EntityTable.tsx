@@ -1,23 +1,21 @@
 // @ts-nocheck
 import React, { useEffect, useState } from "react"
 import { EntitiesURLs, EntitiesCRUD_API } from "../api/EntitiesCRUD_API"
-import { Table, Input, Popconfirm, Form, Typography, Layout, Space, Button, message, Popover, Tag } from "antd"
+import { Table, Input, Typography, Layout, Space, Button, message, Popover, Tag } from "antd"
 import { Content, Header } from "antd/lib/layout/layout"
 import { CloseOutlined, DeleteOutlined, PlusOutlined, SearchOutlined, DeleteColumnOutlined, LeftOutlined, MehOutlined } from "@ant-design/icons"
 import { AntdColumn, buildColumnsByObject, buildCreationForm } from "./PresentersGenerator"
 import Highlighter from 'react-highlight-words'
 import EditableCell from "./EditableCell"
 import { DRAGON_TYPE, DRAGONS_API } from "../api/Dragons"
-import { PERSONS_API } from "../api/Persons";
+import { PERSONS_API } from "../api/Persons"
 
 const EntityTable: React.FC<{ entity: EntitiesURLs, template: object }> =
     ({ entity, template }) => {
 
     const columns = buildColumnsByObject(template)
-    const [form] = Form.useForm()
     const [items, setItems] = useState<Array<object>>([])
     const [isLoading, setIsLoaded] = useState<boolean>(true)
-    const [editingKey, setEditingKey] = useState(0)
     const [selectedRowKeys, setSelectedRowKeys] = useState<Array<number>>([])
     const [isFormVisible, setFormVisibility] = useState<boolean>(false)
     const [searchText, setSearchText] = useState<string>('')
@@ -36,11 +34,11 @@ const EntityTable: React.FC<{ entity: EntitiesURLs, template: object }> =
                 <Space>
                     <Button type="primary"
                             icon={ <SearchOutlined/> }
-                            onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
+                            onClick={ () => handleSearch(selectedKeys, confirm, dataIndex) }
                     >
                         Search
                     </Button>
-                    <Button onClick={() => handleReset(clearFilters)}>
+                    <Button onClick={ () => handleReset(clearFilters) }>
                         Reset
                     </Button>
                 </Space>
@@ -70,94 +68,64 @@ const EntityTable: React.FC<{ entity: EntitiesURLs, template: object }> =
         setSearchText('')
     }
 
-    const isEditing = (record): boolean => record.key === editingKey
-
-    const cancel = () => setEditingKey(0)
-
-    const edit = (record) => {
-        form.setFieldsValue(record)
-        setEditingKey(record.key)
-    }
-
-    const addRecord = data => {
-        EntitiesCRUD_API.add(entity, data)
-            .then( answer => setItems([...items, {...data, id: answer.id}]))
-            .catch( err => message.error(err) )
-    }
-
-    const save = async key => {
-        setEditingKey(0)
-        /*try {
-            const row = await form.validateFields()
-            const newData = [...columns]
-            // @ts-ignore
-            const index = newData.findIndex((item) => key === item.key)
-            if (index > -1) newData.splice(index, 1, { ...newData[index], ...row })
-            else newData.push(row)
-            setItems(newData)
-            setEditingKey(0)
-        } catch (errInfo) {
-            // TODO: красочный вывод
-            console.log("Validate Failed:", errInfo);
-        }*/
-    }
-
     useEffect(() => {
         EntitiesCRUD_API.getAll(entity)
             .then( data => {
                 setIsLoaded(false)
-                setItems(data.map( it => ({ ...it, key: it.id }) ))
+                setItems(data.map( it => {
+                    let expanded = { ...it, key: it.id }
+                    if (entity.split('/').slice(-2)[0] === 'dragons') {
+                        expanded['x'] = it.coordinates.x
+                        expanded['y'] = it.coordinates.y
+                        delete expanded.coordinates
+                    }
+                    return expanded
+                })
+                )
             }).catch( err => message.error(err) )
     }, [entity])
 
     const mergedColumns = [...columns.map( (col: AntdColumn) => ({ ...col, ...getColumnSearchProps(col.dataIndex) })), {
         title: "ACTIONS",
         dataIndex: "actions",
+        fixed: 'right',
         render: ( _, record ) =>
-            isEditing(record) ?
-                <span>
-                    <a onClick={ () => save(record.key) }
-                       style={{ marginRight: 8}}
-                    >
-                        Save
-                    </a>
-                    <Popconfirm title="Sure to cancel?" onConfirm={ cancel }>
-                        <a>
-                            Cancel
-                        </a>
-                    </Popconfirm>
-                </span>
-                :
-                <Typography.Link disabled={editingKey !== 0}
-                                 onClick={() => {
-                                     form.setFieldsValue(record)
-                                     setEditingKey(record.key)
-                                 }}>
+            <Typography.Link>
+                <Popover content={ buildCreationForm(template, formData => {
+                    const filteredFormData = JSON.parse(JSON.stringify(formData)) // быстро удалить все пустые пары ключ-значение из объекта
+                    if (Object.keys(filteredFormData).length !== 0) {
+                        EntitiesCRUD_API.updateById(entity, record.id, filteredFormData)
+                            .then( answer => {
+                                setItems([...items.filter(it => it.id !== record.id), {...record, ...filteredFormData}])
+                                message.success(answer.msg)
+                            })
+                            .catch( err => message.error(err.message) )
+                    } else message.warning('Nothing to modify')
+                }, [], record) }>
                     Edit
-                </Typography.Link>
-    }].map( (col: AntdColumn) => {
-        return !col.editable ? col : {
-            ...col,
-            onCell: record => ({
-                record,
-                inputType: col.dataIndex === "age" ? "number" : "text",
-                dataIndex: col.dataIndex,
-                title: col.title,
-                editing: isEditing(record)
-            })
-        }
-    })
+                </Popover>
+            </Typography.Link>
+    }]
 
     const actions = [
         <Popover
             content={
-                <div>
-                    { buildCreationForm(template, addRecord) }
-                    <Button shape="round"
-                            icon={<CloseOutlined/>}
-                            size="small"
-                            onClick={ () => setFormVisibility(false) }
-                    />
+                <div>{
+                    buildCreationForm(template, formData => {
+                        EntitiesCRUD_API.add(entity, formData)
+                            .then( answer => {
+                                setItems([...items, {...formData, id: answer.id}])
+                                setFormVisibility(false)
+                            })
+                            .catch( err => message.error(err) )
+                    })
+                }
+                <Button shape="round"
+                        danger
+                        icon={ <CloseOutlined/> }
+                        size="small"
+                        onClick={ () => setFormVisibility(false) }
+                />
                 </div>
             }
             visible={ isFormVisible }>
@@ -206,7 +174,6 @@ const EntityTable: React.FC<{ entity: EntitiesURLs, template: object }> =
                 </Popover>
             )
             actions.push(
-                // find_with_killer_weaker_then
                 <Popover trigger="click"
                          content={
                              <Input.Search onSearch={
@@ -230,6 +197,7 @@ const EntityTable: React.FC<{ entity: EntitiesURLs, template: object }> =
                     </Button>
                 </Popover>
             )
+            break
         case 'persons':
             actions.push(
                 <Popover trigger="click"
@@ -254,6 +222,7 @@ const EntityTable: React.FC<{ entity: EntitiesURLs, template: object }> =
                     </Button>
                 </Popover>
             )
+            break
     }
 
     return <Layout className="site-layout">
@@ -275,7 +244,6 @@ const EntityTable: React.FC<{ entity: EntitiesURLs, template: object }> =
                        body: { cell: EditableCell }
                    }}
                    pagination={{
-                       onChange: cancel,
                        position: ["bottomCenter"] }
                    }
             />

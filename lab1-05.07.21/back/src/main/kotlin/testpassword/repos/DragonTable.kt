@@ -11,8 +11,8 @@ object DragonTable: LongIdTable("dragon") {
     val name = text("name").check(op = isNotBlank)
     val coordinates = reference("coordinates", CoordinatesTable.id).default(
             Coordinates.new {
-                x = Random.nextDouble(until = 1000.0)
-                y = Random.nextDouble(until = 1000.0)
+                x = Random.nextInt(100).toDouble()
+                y = Random.nextInt(100).toDouble()
             }.id
     )
     val creationDate = datetime("creation_date").default(LocalDateTime.now())

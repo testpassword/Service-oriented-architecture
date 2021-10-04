@@ -25,7 +25,10 @@ import javax.servlet.http.HttpServletResponse
         resp {
             with(req.json) {
                 if (isEmpty) "Nothing to modify" to Res.SC_ACCEPTED
-                else json()("msg" to "successfully modified") to Res.SC_OK
+                else json()(
+                    "msg" to "successfully modified",
+                    "id" to (Person.findById(req.id)!! recoverFromJSON this@with).id
+                ) to Res.SC_OK
             }
         }
 

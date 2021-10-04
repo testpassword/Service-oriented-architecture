@@ -5,6 +5,7 @@ import khttp.responses.Response
 import org.json.JSONArray
 import testpassword.models.Color
 import testpassword.models.Dragon
+import kotlin.random.Random
 
 enum class Entity(val endpoint: String) {
     ADMIN("http://localhost:8080/api/admin/"),

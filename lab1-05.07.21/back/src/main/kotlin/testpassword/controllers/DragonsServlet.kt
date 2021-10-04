@@ -26,7 +26,7 @@ import javax.servlet.http.HttpServletResponse
     override fun doPut(req: HttpServletRequest, resp: HttpServletResponse) =
         resp {
             with(req.json) {
-                if (this.isEmpty) "Nothing to modify" to Res.SC_ACCEPTED
+                if (this.isEmpty) "Nothing to modify" to Res.SC_NO_CONTENT
                 else json()(
                     "msg" to "successfully modified",
                     "id" to (Dragon.findById(req.id)!! recoverFromJSON this@with).id
