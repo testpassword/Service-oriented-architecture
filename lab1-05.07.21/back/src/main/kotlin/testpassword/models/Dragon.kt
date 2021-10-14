@@ -8,6 +8,7 @@ import testpassword.repos.DragonTable
 import java.time.LocalDateTime
 
 class Dragon(id: EntityID<Long>): LongEntity(id), Comparable<Dragon>, JSONRecoverable<Dragon> {
+
     companion object: LongEntityClass<Dragon>(DragonTable)
     var name by DragonTable.name
     var coordinates by Coordinates referencedOn DragonTable.coordinates

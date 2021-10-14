@@ -10,9 +10,7 @@ import testpassword.extensions.Res
 import testpassword.extensions.json
 import kotlin.reflect.KClass
 
-class NotAcceptableKeyFoundException(keys: Set<String>): Exception("Not acceptable key is ${keys.joinToString(";")}")
-
-class PaginationError(msg: String): Exception(msg)
+class NotAcceptedKeyFoundException(keys: Set<String>): Exception("Not acceptable key is ${keys.joinToString(";")}")
 
 object StartupParamsHolder {
 

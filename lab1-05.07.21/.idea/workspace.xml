@@ -5,16 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62e3dc41-f9ca-40ea-8986-d9cb83080a36" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/back/scripts/kill_frozen.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5f7b5ee0-594e-45d4-b83a-626b637e4b0a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5f7b5ee0-594e-45d4-b83a-626b637e4b0a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/StartupParamsHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/StartupParamsHolder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/AdminServlet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/AdminServlet.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/DragonsServlet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/DragonsServlet.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/PersonsServlet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/controllers/PersonsServlet.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/extensions/Req.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/extensions/Req.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/extensions/Res.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/extensions/Res.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/extensions/db_ext.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/extensions/db_ext.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/src/test/kotlin/testpassword/Helpers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/test/kotlin/testpassword/Helpers.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/models/Dragon.kt" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/kotlin/testpassword/models/Dragon.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/NotAcceptableKeyFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/PaginationError.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/StartupParamsHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/StartupParamsHolder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet$doDelete$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet$doDelete$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/AdminServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doDelete$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doDelete$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doGet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doGet$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doPost$1$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/DragonsServlet$doPost$1$1$1.class" afterDir="false" />
@@ -27,11 +32,27 @@
       <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doPost$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doPost$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doPut$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet$doPut$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/controllers/PersonsServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/Db_extKt$isNotBlank$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/Db_extKt$isNotBlank$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/Db_extKt$isPositiveDouble$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/Db_extKt$isPositiveDouble$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/Db_extKt$isPositiveInt$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/Db_extKt$isPositiveInt$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/Db_extKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/Db_extKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/ReqKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/ReqKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/ResKt$invoke$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/ResKt$invoke$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/ResKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/extensions/ResKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$DragonType.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$DragonType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$compareTo$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$compareTo$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$2$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$2$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon$recoverFromJSON$1$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/models/Dragon.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/target/classes/testpassword/models/JSONRecoverable.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/testpassword/models/JSONRecoverable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/test-classes/testpassword/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/test-classes/testpassword/PersonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/test-classes/testpassword/PersonTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/api_map.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/соа_лаб1_отчёт.pages" beforeDir="false" afterPath="$PROJECT_DIR$/docs/соа_лаб1_отчёт.pages" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1035,7 +1056,12 @@
       <workItem from="1633077317141" duration="6447000" />
       <workItem from="1633195191381" duration="16309000" />
       <workItem from="1633266593573" duration="14911000" />
-      <workItem from="1633294480124" duration="29436000" />
+      <workItem from="1633294480124" duration="29486000" />
+      <workItem from="1633946893434" duration="9361000" />
+      <workItem from="1634031457562" duration="9855000" />
+      <workItem from="1634067729719" duration="8671000" />
+      <workItem from="1634204157607" duration="6558000" />
+      <workItem from="1634245213402" duration="5127000" />
     </task>
     <servers />
   </component>

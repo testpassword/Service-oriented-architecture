@@ -1,0 +1,341 @@
+[
+  {
+    "path": "api/admin/",
+    "methods": [
+      {
+        "method": "get",
+        "res": {
+          "content-type": "text/html",
+          "content": "<html><body><h1>WELCOME, GOD OF DIGITAL WORLD</h1></body></html>",
+          "code": 200
+        }
+      },
+      {
+        "method": "post",
+        "res": {
+          "msg": {
+            "content-type": "application/json",
+            "content": {
+              "msg": "done creation tables"
+            },
+            "code": 200
+          }
+        }
+      },
+      {
+        "method": "delete",
+        "res": {
+          "content-type": "application/json",
+          "content": {
+            "msg": "database cleared"
+          },
+          "code": 200
+        }
+      }
+    ]
+  },
+  {
+    "path": "api/dragons/grouped_by_type",
+    "methods": [
+      {
+        "method": "get",
+        "res": {
+          "content-type": "application/json",
+          "content": {
+            "FIRE": "Int",
+            "AIR": "Int",
+            "UNKNOWN": "Int",
+            "WATER": "Int"
+          },
+          "code": 200
+        }
+      }
+    ]
+  },
+  {
+    "path": "api/dragons/find_with_killer_weaker_then",
+    "methods": [
+      {
+        "method": "get",
+        "params": [
+          {
+            "killer_id": {
+              "required": "true",
+              "type": "Long"
+            }
+          }
+        ],
+        "res": {
+          "content-type": "application/json",
+          "content": [
+            {
+              "id": "Long",
+              "name": "Str",
+              "coordinates": {
+                "x": "Double",
+                "y": "Double"
+              },
+              "creationDate": "Str",
+              "age": "Int",
+              "wingspan": "Double",
+              "color": "Str",
+              "type": "Str",
+              "killerID": "Long"
+            }
+          ],
+          "code": 200
+        }
+      }
+    ]
+  },
+  {
+    "path": "api/dragons/",
+    "methods": [
+      {
+        "method": "get",
+        "params": [
+          {
+            "offset": {
+              "required": "false",
+              "type": "Int"
+            },
+            "limit": {
+              "required": "false",
+              "type": "Int"
+            },
+            "filters": {
+              "required": "false",
+              "type": "Map<str, str>"
+            },
+            "sorters": {
+              "required": "false",
+              "type": "Map<str, str>"
+            }
+          }
+        ],
+        "res": {
+          "content-type": "application/json",
+          "content": [
+            {
+              "id": "Long",
+              "name": "Str",
+              "coordinates": {
+                "x": "Double",
+                "y": "Double"
+              },
+              "creationDate": "Str",
+              "age": "Int",
+              "wingspan": "Double",
+              "color": "Str",
+              "type": "Str",
+              "killerID": "Long"
+            }
+          ],
+          "code": 200
+        }
+      },
+      {
+        "method": "post",
+        "req": {
+          "content-type": "application/json",
+          "required": "true",
+          "content": {
+            "id": "Long",
+            "name": "Str",
+            "coordinates": {
+              "x": "Double",
+              "y": "Double"
+            },
+            "creationDate": "Str",
+            "age": "Int",
+            "wingspan": "Double",
+            "color": "Str",
+            "type": "Str",
+            "killerID": "Long"
+          }
+        },
+        "res": {
+          "content-type": "application/json",
+          "content": {
+            "id": "Long"
+          },
+          "code": 200
+        }
+      }
+    ]
+  },
+  {
+    "path": "api/dragons/{id}/",
+    "methods": [
+      {
+        "method": "put",
+        "req": {
+          "content-type": "application/json",
+          "required": "optional",
+          "content": {
+            "id": "Long",
+            "name": "Str",
+            "coordinates": {
+              "x": "Double",
+              "y": "Double"
+            },
+            "creationDate": "Str",
+            "age": "Int",
+            "wingspan": "Double",
+            "color": "Str",
+            "type": "Str",
+            "killerID": "Long"
+          }
+        },
+        "res": {
+          "content-type": "application/json",
+          "content": {
+            "msg": "successfully modified",
+            "id": "Long"
+          },
+          "code": 200
+        }
+      },
+      {
+        "method": "delete",
+        "res": {
+          "content-type": "application/json",
+          "content": {
+            "msg": "successfully removed",
+            "id": "Long"
+          },
+          "code": 200
+        }
+      }
+    ]
+  },
+  {
+    "path": "api/persons/find_person_included_in_name/",
+    "methods": [
+      {
+        "method": "get",
+        "params": [
+          {
+            "name": {
+              "required": "true",
+              "type": "Str"
+            }
+          }
+        ],
+        "res": {
+          "content-type": "application/json",
+          "content": [
+            {
+              "name": "Str",
+              "height": "Int",
+              "weight": "Int",
+              "passportID": "Str",
+              "hairColor": "Str"
+            }
+          ]
+        },
+        "code": 200
+      }
+    ]
+  },
+  {
+    "path": "api/persons/",
+    "methods": [
+      {
+        "method": "get",
+        "params": [
+          {
+            "offset": {
+              "required": "false",
+              "type": "Int"
+            },
+            "limit": {
+              "required": "false",
+              "type": "Int"
+            },
+            "filters": {
+              "required": "false",
+              "type": "Map<str, str>"
+            },
+            "sorters": {
+              "required": "false",
+              "type": "Map<str, str>"
+            }
+          }
+        ],
+        "res": {
+          "content-type": "application/json",
+          "content": [
+            {
+              "name": "Str",
+              "height": "Int",
+              "weight": "Int",
+              "passportID": "Str",
+              "hairColor": "Str"
+            }
+          ],
+          "code": 200
+        }
+      },
+      {
+        "method": "post",
+        "req": {
+          "content-type": "application/json",
+          "required": "true",
+          "content": {
+            "name": "Str",
+            "height": "Int",
+            "weight": "Int",
+            "passportID": "Str",
+            "hairColor": "Str"
+          }
+        },
+        "res": {
+          "content-type": "application/json",
+          "content": {
+            "id": "Long"
+          },
+          "code": 200
+        }
+      }
+    ]
+  },
+  {
+    "path": "api/persons/{id}/",
+    "methods": [
+      {
+        "methods": "put",
+        "req": {
+          "content-type": "application/json",
+          "required": "optional",
+          "content": {
+            "name": "Str",
+            "height": "Int",
+            "weight": "Int",
+            "passportID": "Str",
+            "hairColor": "Str"
+          }
+        },
+        "res": {
+          "content-type": "application/json",
+          "content": {
+            "msg": "successfully modified",
+            "id": "Long"
+          },
+          "code": 200
+        }
+      },
+      {
+        "method": "delete",
+        "res": {
+          "content-type": "application/json",
+          "content": {
+            "msg": "successfully removed",
+            "id": "Long"
+          },
+          "code": 200
+        }
+      }
+    ]
+  }
+]

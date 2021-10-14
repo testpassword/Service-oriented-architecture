@@ -8,6 +8,8 @@ import kotlin.reflect.KClass
 
 typealias json = JSONObject
 operator fun json.invoke(vararg data: Pair<String, Any>) = this.apply { data.forEach { this.put(it.first, it.second) } }
+fun jsonP(dataFunc: () -> Pair<String, Any>) = json(dataFunc()) // jsonPaired
+fun jsonA(dataFunc: () -> Array<Pair<String, Any>>) = json()(*dataFunc()) //jsonArrayed
 
 typealias Res = HttpServletResponse
 operator fun Res.invoke(customExceptionHandlers: Map<KClass<out Exception>, Pair<Any, Int>> = emptyMap(),
