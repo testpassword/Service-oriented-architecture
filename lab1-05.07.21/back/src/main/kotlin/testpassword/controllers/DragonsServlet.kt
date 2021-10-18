@@ -1,13 +1,13 @@
 package testpassword.controllers
 
-import testpassword.NotAcceptedKeyFoundException
+import org.json.JSONException
 import testpassword.extensions.*
 import testpassword.models.Color
 import testpassword.models.Coordinates
 import testpassword.models.Dragon
 import testpassword.models.Person
 import testpassword.repos.DragonTable
-import testpassword.repos.PersonTable
+import java.time.LocalDateTime
 import java.time.ZoneOffset
 import java.util.*
 import javax.servlet.annotation.WebServlet
@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse
         resp {
             with(req.subpath) {
                 when (this) {
-                    "grouped_by_type" -> jsonA { DragonTable.groupByType().map { it.key.toString() to it.value }.toTypedArray() } to Res.SC_OK
+                    "grouped_by_type" -> json()(*DragonTable.groupByType().map { it.key.toString() to it.value }.toTypedArray()) to Res.SC_OK
                     "find_with_killer_weaker_then" -> DragonTable `find with killer weaker then` Person.findById(req["killer_id"].toLong())!! to Res.SC_OK
                     "" ->
                         Dragon
@@ -68,11 +68,40 @@ import javax.servlet.http.HttpServletResponse
     override fun doPut(req: HttpServletRequest, resp: HttpServletResponse) =
         resp {
             with(req.json) {
-                req.checkKeysIsAccepted(PersonTable.keys)
-                if (this.isEmpty) "Nothing to modify" to Res.SC_NO_CONTENT
-                else json()(
+                req `check keys is accepted` keySet()
+                req.`check body completeness`(this)
+                json()(
                     "msg" to "successfully modified",
-                    "id" to (Dragon.findById(req.id)!! recoverFromJSON this@with).id
+                    "id" to (Dragon.findById(req.id)!!.apply {
+                        try {
+                            name = getString("name")
+                        } catch (e: JSONException) {}
+                        try {
+                            val coords = getJSONObject("coordinates")
+                            coordinates = Coordinates.new {
+                                x = coords.getDouble("x")
+                                y = coords.getDouble("y")
+                            }
+                        } catch (e: JSONException) {}
+                        try {
+                            creationDate = LocalDateTime.now()
+                        } catch (e: JSONException) {}
+                        try {
+                            age = getString("age").toInt()
+                        } catch (e: JSONException) {}
+                        try {
+                            wingspan = getString("wingspan").toDouble()
+                        } catch (e: JSONException) {}
+                        try {
+                            color = Color.valueOf(getString("color"))
+                        } catch (e: JSONException) {}
+                        try {
+                            type = Dragon.DragonType.valueOf(getString("type"))
+                        } catch (e: JSONException) {}
+                        try {
+                            killer = Person.findById(getString("killerID").toLong())
+                        } catch (e: JSONException) {}
+                    }).id
                 ) to Res.SC_OK
             }
         }
@@ -80,8 +109,28 @@ import javax.servlet.http.HttpServletResponse
     override fun doPost(req: HttpServletRequest, resp: HttpServletResponse) =
         resp {
             with(req.json) {
-                if (isEmpty) "You should provide info for creation" to Res.SC_BAD_REQUEST
-                else jsonP { "id" to (Dragon.new {} recoverFromJSON this@with).id } to Res.SC_OK
+                req `check keys is accepted` keySet()
+                req.`check body completeness`(this, setOf("name", "age", "wingspan", "color"))
+                json()("id" to (Dragon.new {
+                    name = getString("name")
+                    try {
+                        val coords = getJSONObject("coordinates")
+                        coordinates = Coordinates.new {
+                            x = coords.getDouble("x")
+                            y = coords.getDouble("y")
+                        }
+                    } catch (e: JSONException) {}
+                    creationDate = LocalDateTime.now()
+                    age = getInt("age")
+                    wingspan = getDouble("wingspan")
+                    color = getEnum(Color::class.java, "color")
+                    try {
+                        type = getEnum(Dragon.DragonType::class.java, "type")
+                    } catch (e: JSONException) {}
+                    try {
+                        killer = Person.findById(getLong("killerID"))
+                    } catch (e: JSONException) {}
+                }).id) to Res.SC_OK
             }
         }
 

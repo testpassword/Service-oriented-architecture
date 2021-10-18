@@ -33,13 +33,13 @@ import javax.servlet.http.*
                 // we separate creation of DragonTable because other should be already created otherwise it's throws an exception
                 create(DragonTable)
             }
-            jsonP { "msg" to "done creation tables" } to Res.SC_OK
+            json()("msg" to "done creation tables") to Res.SC_OK
         }
 
     override fun doDelete(req: HttpServletRequest, resp: HttpServletResponse) =
         resp {
             sequenceOf(Dragon, Person, Coordinates).flatMap { it.all() }.forEach(LongEntity::delete)
-            jsonP { "msg" to "database cleared" } to Res.SC_OK
+            json()("msg" to "database cleared") to Res.SC_OK
         }
 
     override fun doPut(req: HttpServletRequest, resp: HttpServletResponse) =

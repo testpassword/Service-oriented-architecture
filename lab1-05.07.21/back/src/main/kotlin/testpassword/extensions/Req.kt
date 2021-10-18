@@ -1,7 +1,6 @@
 package testpassword.extensions
 
 import org.json.JSONObject
-import testpassword.NotAcceptedKeyFoundException
 import java.util.stream.Collectors
 import javax.servlet.http.HttpServletRequest
 
@@ -19,14 +18,21 @@ val Req.id: Long get() = this.tokens.last().toLongOrNull() ?: 0
 
 val Req.subpath: String get() = this.tokens.lastOrNull() ?: ""
 
-class PaginationError(msg: String): Exception(msg)
+class NotAcceptedKeyFoundException(keys: Set<String>): Exception("Not acceptable keys is ${keys.joinToString(", ")}")
 
-fun Req.checkKeysIsAccepted(entityKeys: Set<String>) =
+infix fun Req.`check keys is accepted`(entityKeys: Set<String>) =
     (this.filters + this.sorters)
         .keys
         .filter { it !in entityKeys }
         .toSet()
         .also { if (it.isNotEmpty()) throw NotAcceptedKeyFoundException(it) }
+
+fun Req.`check body completeness`(jsonObject: JSONObject, requiredKeys: Set<String> = emptySet()) {
+    if (jsonObject.isEmpty) throw Exception("Body is empty")
+    (requiredKeys - jsonObject.keySet()).also { if (it.isNotEmpty()) throw Exception("Missing keys: [${it.joinToString(",")}]") }
+}
+
+class PaginationError(msg: String): Exception(msg)
 
 val Req.paginationPointer: Pair<Int, Long>?
     get() {
@@ -34,10 +40,10 @@ val Req.paginationPointer: Pair<Int, Long>?
         val offset = this["offset"]
         return if (limit.isBlank() && offset.isBlank()) null
         else try {
-            limit.toInt() to offset.toLong()
+            (limit.toInt() to offset.toLong()).also { if (it.first < 0 || it.second < 0) throw NumberFormatException() }
         } catch (e: Exception) {
             throw PaginationError(when (e) {
-                is NumberFormatException -> "You should provide both params: limit and offset and both should be Int"
+                is NumberFormatException -> "You should provide both params: limit and offset and both should be non-negative Int"
                 else -> "Unexpected exception"
             })
         }

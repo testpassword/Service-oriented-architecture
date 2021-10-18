@@ -1,6 +1,6 @@
 package testpassword.controllers
 
-import testpassword.NotAcceptedKeyFoundException
+import org.json.JSONException
 import testpassword.extensions.*
 import testpassword.models.Color
 import testpassword.models.Person
@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse
 
     override fun doGet(req: HttpServletRequest, resp: HttpServletResponse) =
         resp {
-            req.checkKeysIsAccepted(PersonTable.keys)
+            req.`check keys is accepted`(PersonTable.keys)
             with(req.subpath) {
                 when (this) {
                     "find_person_included_in_name" -> (PersonTable `find person included in name` req["name"]).map(Person::transformToJSON) to Res.SC_OK
@@ -58,12 +58,29 @@ import javax.servlet.http.HttpServletResponse
     // по принципу работы это должен быть PATCH, но Jetty его не поддерживает
     override fun doPut(req: HttpServletRequest, resp: HttpServletResponse) =
         resp {
-            req.checkKeysIsAccepted(PersonTable.keys)
             with(req.json) {
-                if (isEmpty) "Nothing to modify" to Res.SC_ACCEPTED
-                else json()(
+                req `check keys is accepted` PersonTable.keys
+                req.`check body completeness`(this)
+                json()(
                     "msg" to "successfully modified",
-                    "id" to (Person.findById(req.id)!! recoverFromJSON this@with).id
+                    "id" to (
+                            Person.findById(req.id)!!.apply {
+                                try {
+                                    name = getString("name")
+                                } catch (e: JSONException) {}
+                                try {
+                                    height = getString("height").toInt()
+                                } catch (e: JSONException) {}
+                                try {
+                                    weight = getString("weight").toInt()
+                                } catch (e: JSONException) {}
+                                try {
+                                    passportID = getString("passportID")
+                                } catch (e: JSONException) {}
+                                try {
+                                    hairColor = Color.valueOf(getString("hairColor"))
+                                } catch (e: JSONException) {}
+                            }).id
                 ) to Res.SC_OK
             }
         }
@@ -71,14 +88,22 @@ import javax.servlet.http.HttpServletResponse
     override fun doPost(req: HttpServletRequest, resp: HttpServletResponse) =
         resp {
             with(req.json) {
-                if (isEmpty) "You should provide info for creation" to Res.SC_BAD_REQUEST
-                else jsonP { "id" to (Person.new {} recoverFromJSON this@with).id } to Res.SC_OK
+                req `check keys is accepted` PersonTable.keys
+                req.`check body completeness`(this, setOf("name", "height", "weight", "passportID", "hairColor"))
+                json()("id" to (
+                        Person.new {
+                            name = getString("name")
+                            height = getInt("height")
+                            weight = getInt("weight")
+                            passportID = getString("passportID")
+                            hairColor = getEnum(Color::class.java, "hairColor")
+                        }).id) to Res.SC_OK
             }
         }
 
     override fun doDelete(req: HttpServletRequest, resp: HttpServletResponse) =
         resp {
             Person.findById(req.id)!!.delete()
-            jsonP { "msg" to "successfully removed" } to Res.SC_OK
+            json()("msg" to "successfully removed") to Res.SC_OK
         }
 }

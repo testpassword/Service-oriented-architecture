@@ -7,10 +7,7 @@ import testpassword.controllers.AdminServlet
 import testpassword.controllers.DragonsServlet
 import testpassword.controllers.PersonsServlet
 import testpassword.extensions.Res
-import testpassword.extensions.json
 import kotlin.reflect.KClass
-
-class NotAcceptedKeyFoundException(keys: Set<String>): Exception("Not acceptable key is ${keys.joinToString(";")}")
 
 object StartupParamsHolder {
 
@@ -24,7 +21,8 @@ object StartupParamsHolder {
     }
 
     fun initGlobalExceptions() {
-        GLOBAL_EXCEPTION_HANDLERS[NullPointerException::class] = json("msg" to "entity with requested id didn't exist") to Res.SC_NOT_FOUND
+        GLOBAL_EXCEPTION_HANDLERS[NullPointerException::class] = "entity with requested id didn't exist" to Res.SC_NOT_FOUND
+        GLOBAL_EXCEPTION_HANDLERS[NumberFormatException::class] = "value should be number, not string" to Res.SC_BAD_REQUEST
     }
 
     fun initEmbeddedServer(port: Int) =
