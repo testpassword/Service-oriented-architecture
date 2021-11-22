@@ -11,8 +11,9 @@ import kotlin.random.Random
     @OneToOne(optional = false, cascade = [CascadeType.ALL]) @JoinColumn(name = "coordinates")
     var coordinates: Coordinates = Coordinates(
         null,
-        Random.nextInt(100).toDouble(),
-        Random.nextInt(100).toDouble()
+        Random.nextDouble(100.0),
+        Random.nextDouble(100.0),
+        Random.nextDouble(-1000.0, 1000.0)
     ),
     var creationDate: Date = Date(),
     var age: Int,
