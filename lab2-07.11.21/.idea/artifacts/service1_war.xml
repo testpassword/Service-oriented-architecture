@@ -9,7 +9,7 @@
         <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
-    <root id="archive" name="service1-0.0.1-SNAPSHOT.war">
+    <root id="archive" name="service1-1.war">
       <element id="artifact" artifact-name="service1:war exploded" />
     </root>
   </artifact>

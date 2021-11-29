@@ -10,7 +10,7 @@
     </parent>
     <groupId>testpassword</groupId>
     <artifactId>service1</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1</version>
     <packaging>war</packaging>
     <name>service1</name>
     <description>service1</description>
@@ -34,6 +34,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.module</groupId>

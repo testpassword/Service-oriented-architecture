@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/soa1?encoding=UTF8</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">root</property>
+        <mapping class="testpassword.service2.models.Color"/>
+        <mapping class="testpassword.service2.models.Team"/>
+        <mapping class="testpassword.service2.models.Coordinates"/>
+        <mapping class="testpassword.service2.models.Dragon"/>
+        <mapping class="testpassword.service2.models.Person"/>
+    </session-factory>
+</hibernate-configuration>

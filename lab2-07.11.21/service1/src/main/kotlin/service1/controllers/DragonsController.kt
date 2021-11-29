@@ -21,10 +21,10 @@ class DragonsController {
     @Autowired private lateinit var coordinatesRepo: CoordinatesRepo
 
     @GetMapping
-    fun get(@RequestParam(required = false) limit: Int,
-            @RequestParam(required = false) offset: Int,
-            @RequestParam(required = false) sorters: String,
-            @RequestParam(required = false) filters: String
+    fun get(@RequestParam(required = false) limit: Int?,
+            @RequestParam(required = false) offset: Int?,
+            @RequestParam(required = false, defaultValue = "") sorters: String,
+            @RequestParam(required = false, defaultValue = "") filters: String
     ): List<Dragon> {
         val slices = parseSliceParams(filters, sorters, Person::class)
         return repo.findAll().paginate(limit, offset).let { originals ->

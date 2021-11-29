@@ -1,0 +1,1 @@
+java18 -Dspring.config.location=helios.properties -jar service1-1.war
