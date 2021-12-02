@@ -31,20 +31,20 @@
           <option name="apiVersion" value="1.5" />
           <option name="pluginOptions">
             <array>
+              <option value="plugin:org.jetbrains.kotlin.noarg:annotation=javax.persistence.Entity" />
+              <option value="plugin:org.jetbrains.kotlin.noarg:annotation=javax.persistence.Embeddable" />
+              <option value="plugin:org.jetbrains.kotlin.noarg:annotation=javax.persistence.MappedSuperclass" />
               <option value="plugin:org.jetbrains.kotlin.allopen:annotation=javax.ws.rs.Path" />
               <option value="plugin:org.jetbrains.kotlin.allopen:annotation=javax.enterprise.context.ApplicationScoped" />
               <option value="plugin:org.jetbrains.kotlin.allopen:annotation=javax.persistence.Entity" />
               <option value="plugin:org.jetbrains.kotlin.allopen:annotation=javax.persistence.Embeddable" />
               <option value="plugin:org.jetbrains.kotlin.allopen:annotation=javax.persistence.MappedSuperclass" />
-              <option value="plugin:org.jetbrains.kotlin.noarg:annotation=javax.persistence.Entity" />
-              <option value="plugin:org.jetbrains.kotlin.noarg:annotation=javax.persistence.Embeddable" />
-              <option value="plugin:org.jetbrains.kotlin.noarg:annotation=javax.persistence.MappedSuperclass" />
             </array>
           </option>
           <option name="pluginClasspaths">
             <array>
-              <option value="$KOTLIN_BUNDLED$/lib/allopen-compiler-plugin.jar" />
               <option value="$KOTLIN_BUNDLED$/lib/noarg-compiler-plugin.jar" />
+              <option value="$KOTLIN_BUNDLED$/lib/allopen-compiler-plugin.jar" />
             </array>
           </option>
           <option name="errors">

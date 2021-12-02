@@ -1,5 +1,7 @@
 package service1.models
 
+import com.fasterxml.jackson.annotation.JsonIgnore
+import com.fasterxml.jackson.annotation.JsonProperty
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.converter.HttpMessageNotReadableException
 import service1.repos.DragonsRepo
@@ -12,7 +14,7 @@ import javax.persistence.*
     @Column(nullable = false) var weight: Int,
     @Column(length = 22, name = "passport_id") var passportId: String,
     @Enumerated(EnumType.STRING) @Column(name = "hair_color") var hairColor: Color,
-    @ManyToOne(optional = true, cascade = [CascadeType.ALL]) @JoinColumn(name = "team_id") var team: Team?
+    @JsonIgnore @ManyToOne(optional = true, cascade = [CascadeType.ALL], fetch = FetchType.LAZY) @JoinColumn(name = "team_id") var team: Team?
 ): Comparable<Person> {
 
     @Transient @Autowired private lateinit var dragonsRepo: DragonsRepo
@@ -23,4 +25,6 @@ import javax.persistence.*
 
     override infix operator fun compareTo(other: Person): Int =
         { p: Person -> p.weight + p.height + dragonsRepo.findByKiller(other).count() * 2 }.run { this(this@Person) - this(other) }
+
+    @JsonProperty("team") fun getTeamId(): Int? = team?.id
 }

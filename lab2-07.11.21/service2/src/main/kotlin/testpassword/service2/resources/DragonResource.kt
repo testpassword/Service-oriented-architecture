@@ -14,7 +14,7 @@ class DragonResource {
 
     enum class Type { MIN, MAX }
 
-    @GET @Path("find-by-cave-depth")
+    @GET @Path("find_by_cave_depth")
     fun getDragonWithDeepestCave(@QueryParam("type") type: Type): List<Dragon> =
         getHttpClient()
             .target("${System.getProperty("service1_url")}/api/dragons/")

@@ -3,10 +3,8 @@
     <output-path>$PROJECT_DIR$/service1/target</output-path>
     <properties id="maven-jee-properties">
       <options>
-        <exploded>false</exploded>
         <module>service1</module>
         <packaging>war</packaging>
-        <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
     <root id="archive" name="service1-1.war">

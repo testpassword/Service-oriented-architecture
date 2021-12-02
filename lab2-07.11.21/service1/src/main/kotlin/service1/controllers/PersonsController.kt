@@ -39,7 +39,7 @@ class PersonsController {
                     "name" -> records.directionalSort(v) { it.name }
                     "height" -> records.directionalSort(v) { it.height }
                     "weight" -> records.directionalSort(v) { it.weight }
-                    "passportID" -> records.directionalSort(v) { it.passportId }
+                    "passportId" -> records.directionalSort(v) { it.passportId }
                     "hairColor" -> records.directionalSort(v) { it.hairColor }
                     else -> records
                 }.toMutableList()
@@ -52,10 +52,10 @@ class PersonsController {
     fun getIncludedInName(@RequestParam name: String): List<Person> = repo.findAllByNameContains(name)
 
     @PutMapping(path = ["{id}"])
-    fun modify(@PathVariable id: Int, @RequestBody changes: Person): String {
+    fun modify(@PathVariable id: Int, @RequestBody changes: Person): Map<String, String> {
         val person = repo.findById(id).get()
         if (person.id == id) repo.save(changes)
-        return "successfully modified"
+        return mapOf("msg" to "successfully modified")
     }
 
     @GetMapping(path = ["{id}"])
@@ -65,8 +65,8 @@ class PersonsController {
     fun add(@RequestBody person: Person): Int = repo.save(person.apply { id = null }).id!!
 
     @DeleteMapping(path = ["{id}"])
-    fun delete(@PathVariable id: Int): String {
+    fun delete(@PathVariable id: Int): Map<String, String> {
         repo.deleteById(id)
-        return "successfully deleted"
+        return mapOf("msg" to "successfully deleted")
     }
 }

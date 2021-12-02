@@ -68,10 +68,10 @@ class DragonsController {
     fun getWithKillerWeakerThen(@RequestParam killer_id: Int): List<Dragon> = repo.findByKillerLessThan(personsRepo.findById(killer_id).get())
 
     @PatchMapping(path = ["{id}"])
-    fun modify(@PathVariable id: Int, @RequestBody changes: Dragon): String {
+    fun modify(@PathVariable id: Int, @RequestBody changes: Dragon): Map<String,String> {
         val dragon = repo.findById(id).get()
         if (dragon.id == id) repo.save(changes)
-        return "successfully modified"
+        return mapOf("msg" to "successfully modified")
     }
 
     @GetMapping(path = ["{id}"])
@@ -81,8 +81,8 @@ class DragonsController {
     fun add(@RequestBody dragon: Dragon): Int = repo.save(dragon.apply { id = null }).id!!
 
     @DeleteMapping(path = ["{id}"])
-    fun delete(@PathVariable id: Int): String {
+    fun delete(@PathVariable id: Int): Map<String, String> {
         repo.deleteById(id)
-        return "successfully deleted"
+        return mapOf("msg" to "successfully deleted")
     }
 }

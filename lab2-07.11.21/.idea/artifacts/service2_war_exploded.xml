@@ -1,12 +1,11 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="service2:war exploded">
-    <output-path>$PROJECT_DIR$/service2/target/service2-1</output-path>
+    <output-path>$PROJECT_DIR$/service2/target/killer</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
         <module>service2</module>
         <packaging>war</packaging>
-        <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
     <root id="root">
@@ -83,7 +82,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/service2/target/service2-1/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/service2/target/killer/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="service2/web/Web" />
     </root>

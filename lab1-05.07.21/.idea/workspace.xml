@@ -5,24 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62e3dc41-f9ca-40ea-8986-d9cb83080a36" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../lab2-07.11.21/.idea/libraries/Maven__com_sun_jersey_jersey_core_1_19_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab2-07.11.21/.idea/libraries/Maven__com_sun_jersey_jersey_json_1_19_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab2-07.11.21/.idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_2_2_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab2-07.11.21/.idea/libraries/Maven__javax_ws_rs_jsr311_api_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab2-07.11.21/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab2-07.11.21/.idea/libraries/Maven__org_codehaus_jackson_jackson_jaxrs_1_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab2-07.11.21/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab2-07.11.21/.idea/libraries/Maven__org_codehaus_jackson_jackson_xc_1_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab2-07.11.21/.idea/libraries/Maven__org_codehaus_jettison_jettison_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab2-07.11.21/service3/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab2-07.11.21/service3/front.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab2-07.11.21/service3/service3.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2-07.11.21/.idea/artifacts/service2_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2-07.11.21/.idea/artifacts/service2_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2-07.11.21/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2-07.11.21/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2-07.11.21/service1/src/main/kotlin/service1/controllers/DragonsController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2-07.11.21/service1/src/main/kotlin/service1/controllers/DragonsController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2-07.11.21/service1/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2-07.11.21/service1/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2-07.11.21/service2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2-07.11.21/service2/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2-07.11.21/service2/service2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2-07.11.21/service2/service2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2-07.11.21/service2/src/main/kotlin/testpassword/service2/resources/DragonResource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2-07.11.21/service2/src/main/kotlin/testpassword/service2/resources/DragonResource.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2-07.11.21/service2/target/service2-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2-07.11.21/service2/target/service2-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2-07.11.21/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2-07.11.21/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2-07.11.21/service1/src/main/kotlin/service1/configs/SecurityConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2-07.11.21/service1/src/main/kotlin/service1/configs/SecurityConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2-07.11.21/service2/target/classes/testpassword/service2/SessionFactoryKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2-07.11.21/service2/target/classes/testpassword/service2/SessionFactoryKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2-07.11.21/service2/target/service2-1/WEB-INF/classes/testpassword/service2/SessionFactoryKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2-07.11.21/service2/target/service2-1/WEB-INF/classes/testpassword/service2/SessionFactoryKt.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +104,7 @@
       <recent name="testpassword" />
     </key>
   </component>
-  <component name="RunManager" selected="Jetty Server.local">
+  <component name="RunManager" selected="Kotlin.Embedded">
     <configuration name="AdminTest.create tables in database" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="back" />
       <extension name="coverage">
@@ -1036,6 +1026,7 @@
       <workItem from="1635086883400" duration="1986000" />
       <workItem from="1637509488037" duration="13926000" />
       <workItem from="1638025133717" duration="31000" />
+      <workItem from="1638311832268" duration="324000" />
     </task>
     <servers />
   </component>
