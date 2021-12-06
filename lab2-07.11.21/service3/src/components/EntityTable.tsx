@@ -105,7 +105,7 @@ const EntityTable: React.FC<{ entity: EntitiesURLs, template: object, removable:
                 <Popover content={buildCreationForm(template, formData => {
                     const filteredFormData = items.filter(it => it.id == record.id)[0]
                     const modified = {
-                        ...items.filter(it => it.id == record.id)[0],
+                        ...items.find(it => it.id == record.id),
                         ...JSON.parse(JSON.stringify(formData)) // быстро удалить все пустые пары ключ-значение из объекта
                     }
                     if (Object.keys(filteredFormData).length !== 0) {
@@ -272,7 +272,14 @@ const EntityTable: React.FC<{ entity: EntitiesURLs, template: object, removable:
                          content={
                              <Form onFinish={ formData => {
                                  TEAMS_API.bindPersonToTeam(formData.teamId, formData.personId)
-                                     .then( answer => message.success(answer) )
+                                     .then( answer => {
+                                         message.success(answer)
+                                         items
+                                             .find( it => it.teamId == formData.teamId )
+                                             .membersIds
+                                             .push(formData.personId)
+                                         setItems(items)
+                                     })
                                      .catch( e => message.error(e) )
                              }}>
                                  <Form.Item label="teamId" name="teamId" required={true}>

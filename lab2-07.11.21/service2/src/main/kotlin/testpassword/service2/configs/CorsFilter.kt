@@ -10,5 +10,6 @@ import javax.ws.rs.ext.Provider
     override fun filter(requestContext: ContainerRequestContext, responseContext: ContainerResponseContext) {
         responseContext.headers.add("Access-Control-Allow-Origin", "*")
         responseContext.headers.add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+        responseContext.headers.add("Access-Control-Allow-Headers", "*")
     }
 }

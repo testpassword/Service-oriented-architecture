@@ -4,7 +4,7 @@
 
 1. Сгенерируй ключ командой, где вместо `$NAME` ваш домен, а вместо `$PASS` пароль для `keystore`-файла.
 ```shell
-keytool -genkeypair -alias $NAME -keyalg RSA -keysize 4096 -storetype PKCS12 -keystore $NAME.p12 -validity 3650 -storepass $PASS
+keytool -genkeypair -alias $NAME -keyalg RSA -keysize 4096 -storetype jks -keystore $NAME.jks -validity 3650 -storepass $PASS
 ```
 
 ## Настройка для исходящий подключений
@@ -57,7 +57,7 @@ chmod -R 777 wildfly-19.0.0.Final
    ```xml
     <https-listener name="default-ssl" socket-binding="https" security-realm="ssl-realm" enable-http2="true"/>
     ```
-   3. Удали стандартный `http`-прослушиватель для запрета небезопасных подключений:
+   3. Удали стандартный `http`-прослушиватель для запрета небезопасных подключений (надо по заданию так сделать):
    ```xml
     <http-listener name="default" socket-binding="http" redirect-socket="https" enable-http2="true"/>
     ```

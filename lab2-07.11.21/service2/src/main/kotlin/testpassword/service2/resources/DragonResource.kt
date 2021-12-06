@@ -6,7 +6,6 @@ import javax.ws.rs.*
 import javax.ws.rs.core.GenericType
 import javax.ws.rs.core.MediaType
 
-
 @Path("dragons")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
@@ -19,7 +18,7 @@ class DragonResource {
         getHttpClient()
             .target("${System.getProperty("service1_url")}/api/dragons/")
             .request(MediaType.APPLICATION_JSON)
-            .get(object : GenericType<List<Dragon>>() {})
+            .get(object: GenericType<List<Dragon>>() {})
             .let {
                 val extreme = it
                     .map { d -> d.coordinates.z }

@@ -4,7 +4,7 @@
 
 1. Сгенерируй ключ командой, где вместо `$NAME` ваш домен, а вместо `$PASS` пароль для `keystore`-файла.
 ```shell
-keytool -genkeypair -alias $NAME -keyalg RSA -keysize 4096 -storetype PKCS12 -keystore $NAME.p12 -validity 3650 -storepass $PASS
+keytool -genkeypair -alias $NAME -keyalg RSA -keysize 4096 -storetype jks -keystore $NAME.jks -validity 3650 -storepass $PASS
 ```
 
 ## Настройка для входящих подключений
