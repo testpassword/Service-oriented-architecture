@@ -8,10 +8,13 @@ import kotlin.reflect.KClass
 class PaginationError(msg: String): Exception(msg)
 
 fun <T> Iterable<T>.paginate(limit: Int?, offset: Int?): List<T> =
-    if (limit == null && offset == null) this.toList()
-    else if ((limit == null && offset != null) || (limit != null && offset == null))
-        throw PaginationError("You should provide both params: limit and offset and both should be non-negative Int")
-    else this.toList().subList(offset!!, this.count()).take(limit!!)
+    try {
+        if (limit == null && offset == null) this.toList()
+        else if (limit == null || offset == null) throw PaginationError("You should provide both params: limit and offset and both should be non-negative Int")
+        else this.toList().subList(offset, this.count()).also { if (it.count() <= limit) it else it.take(limit) }
+    } catch (e: IllegalArgumentException) {
+        throw PaginationError("count of records less then offset")
+    }
 
 class FilterError(msg: String = "Filters should match '&filters=field:pattern;field:pattern'"): Exception(msg)
 
