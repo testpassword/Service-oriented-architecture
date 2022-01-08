@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62e3dc41-f9ca-40ea-8986-d9cb83080a36" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../lab2-07.11.21/service3/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab2-07.11.21/service3/front.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab2-07.11.21/service3/service3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2-07.11.21/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2-07.11.21/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2-07.11.21/service1/src/main/kotlin/service1/configs/SecurityConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2-07.11.21/service1/src/main/kotlin/service1/configs/SecurityConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2-07.11.21/service2/target/classes/testpassword/service2/SessionFactoryKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2-07.11.21/service2/target/classes/testpassword/service2/SessionFactoryKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2-07.11.21/service2/target/service2-1/WEB-INF/classes/testpassword/service2/SessionFactoryKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2-07.11.21/service2/target/service2-1/WEB-INF/classes/testpassword/service2/SessionFactoryKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5f7b5ee0-594e-45d4-b83a-626b637e4b0a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5f7b5ee0-594e-45d4-b83a-626b637e4b0a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9e9ef5e0-e247-4c01-8191-3f14ca1c92d7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9e9ef5e0-e247-4c01-8191-3f14ca1c92d7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2-07.11.21/service2/target/classes/testpassword/service2/resources/DragonResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2-07.11.21/service2/target/classes/testpassword/service2/resources/DragonResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2-07.11.21/service2/target/killer/WEB-INF/classes/testpassword/service2/resources/DragonResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2-07.11.21/service2/target/killer/WEB-INF/classes/testpassword/service2/resources/DragonResource.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +48,9 @@
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="g0a127zg" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -1027,6 +1026,7 @@
       <workItem from="1637509488037" duration="13926000" />
       <workItem from="1638025133717" duration="31000" />
       <workItem from="1638311832268" duration="324000" />
+      <workItem from="1640356233090" duration="266000" />
     </task>
     <servers />
   </component>
