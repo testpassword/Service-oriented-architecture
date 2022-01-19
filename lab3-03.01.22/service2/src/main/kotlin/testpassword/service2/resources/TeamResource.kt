@@ -1,22 +1,22 @@
 package testpassword.service2.resources
 
 import org.hibernate.ObjectNotFoundException
+import testpassword.service2.getFromEJBPool
 import testpassword.service2.models.Team
+import testpassword.service2.services.TeamDto
+import testpassword.service2.services.TeamService
 import javax.ws.rs.core.MediaType
-import testpassword.service2.services.TeamServiceImpl
 import javax.ws.rs.*
 import javax.ws.rs.core.Response
 
 @Path("teams") @Produces(MediaType.APPLICATION_JSON) @Consumes(MediaType.APPLICATION_JSON)
 class TeamResource {
 
-    private val service = TeamServiceImpl()
+    private val service = getFromEJBPool("java:global/killer-ejb/TeamServiceImpl") as TeamService
 
-    @GET
-    fun getTeams(): Set<TeamServiceImpl.TeamDto> = service.getTeamsWithMembersIds()
+    @GET fun getTeams(): Set<TeamDto> = service.getTeamsWithMembersIds()
 
-    @POST
-    fun createTeam(team: Team): Int = service createTeam team
+    @POST fun createTeam(team: Team): Int = service createTeam team
 
     @POST @Path("{id}")
     fun bindPersonToTeam(@PathParam("id") teamIdStr: String, @QueryParam("candidate_id") candidateIdStr: String): Response {

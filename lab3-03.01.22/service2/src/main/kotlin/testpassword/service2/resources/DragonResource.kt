@@ -1,12 +1,8 @@
 package testpassword.service2.resources
 
-import org.wildfly.naming.client.WildFlyInitialContextFactory
+import testpassword.service2.getFromEJBPool
 import testpassword.service2.services.DragonService
 import testpassword.service2.services.SORT_TYPE
-import testpassword.service2.services.WorkerService
-import java.util.*
-import javax.naming.Context
-import javax.naming.InitialContext
 import javax.ws.rs.*
 import javax.ws.rs.core.MediaType
 import javax.ws.rs.core.Response
@@ -14,23 +10,16 @@ import javax.ws.rs.core.Response
 @Path("dragons") @Produces(MediaType.APPLICATION_JSON) @Consumes(MediaType.APPLICATION_JSON)
 class DragonResource {
 
-    private lateinit var service: DragonService
+    private val service = getFromEJBPool("java:global/killer-ejb/DragonServiceImpl") as DragonService
 
     @GET @Path("find_by_cave_depth")
-    fun getDragonWithDeepestCave(@QueryParam("type") type: SORT_TYPE): Response =
-        try {
-            Response
-                .status(200)
-                .entity(
-                    (InitialContext(
-                        Properties().apply {
-                            put(Context.INITIAL_CONTEXT_FACTORY, WildFlyInitialContextFactory::class.java.name) }
-                    )
-                        .lookup("java:global/killer-ejb/WorkerServiceImpl") as WorkerService)
-                        .calculate(1, 2)
-                ).build()
+    fun getDragonWithDeepestCave(@QueryParam("type") type: SORT_TYPE): Response {
+        val (code, data) = try {
+            200 to service.getDragonWithDeepestCave(type)
         } catch (e: ProcessingException) {
-            Response.status(503).entity(mapOf("msg" to "service error, try later")).build()
+            503 to mapOf("msg" to "service error, try later")
         }
+        return Response.status(code).entity(data).build()
+    }
 }
 

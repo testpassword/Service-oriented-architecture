@@ -28,7 +28,33 @@
                 </executions>
                 <configuration>
                     <jvmTarget>1.8</jvmTarget>
+                    <compilerPlugins>
+                        <plugin>all-open</plugin>
+                        <plugin>no-arg</plugin>
+                    </compilerPlugins>
+                    <pluginOptions>
+                        <option>all-open:annotation=javax.ws.rs.Path</option>
+                        <option>all-open:annotation=javax.enterprise.context.ApplicationScoped</option>
+                        <option>all-open:annotation=javax.persistence.Entity</option>
+                        <option>all-open:annotation=javax.persistence.Embeddable</option>
+                        <option>all-open:annotation=javax.persistence.MappedSuperclass</option>
+                        <option>no-arg:annotation=javax.persistence.Entity</option>
+                        <option>no-arg:annotation=javax.persistence.Embeddable</option>
+                        <option>no-arg:annotation=javax.persistence.MappedSuperclass</option>
+                    </pluginOptions>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-maven-allopen</artifactId>
+                        <version>${kotlin.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-maven-noarg</artifactId>
+                        <version>${kotlin.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -78,7 +104,6 @@
             <groupId>org.glassfish.jersey.inject</groupId>
             <artifactId>jersey-hk2</artifactId>
         </dependency>
-        <!--         uncomment this to get JSON support-->
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-json-binding</artifactId>

@@ -7,9 +7,10 @@ import javax.ws.rs.ext.Provider
 
 @Provider class CorsFilter: ContainerResponseFilter {
 
-    override fun filter(requestContext: ContainerRequestContext, responseContext: ContainerResponseContext) {
-        responseContext.headers.add("Access-Control-Allow-Origin", "*")
-        responseContext.headers.add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
-        responseContext.headers.add("Access-Control-Allow-Headers", "*")
-    }
+    override fun filter(requestContext: ContainerRequestContext, responseContext: ContainerResponseContext) =
+        listOf(
+            "Access-Control-Allow-Origin" to "*",
+            "Access-Control-Allow-Headers" to "*",
+            "Access-Control-Allow-Methods" to "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+        ).forEach { responseContext.headers.add(it.first, it.second) }
 }

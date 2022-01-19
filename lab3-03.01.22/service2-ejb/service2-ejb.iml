@@ -31,15 +31,33 @@
             <stringArg name="languageVersion" arg="1.6" />
           </stringArguments>
           <arrayArguments>
-            <arrayArg name="pluginClasspaths" />
-            <arrayArg name="pluginOptions" />
+            <arrayArg name="pluginClasspaths">
+              <args>
+                <arg>$KOTLIN_BUNDLED$/lib/noarg-compiler-plugin.jar</arg>
+                <arg>$KOTLIN_BUNDLED$/lib/allopen-compiler-plugin.jar</arg>
+              </args>
+            </arrayArg>
+            <arrayArg name="pluginOptions">
+              <args>
+                <arg>plugin:org.jetbrains.kotlin.noarg:annotation=javax.persistence.Entity</arg>
+                <arg>plugin:org.jetbrains.kotlin.noarg:annotation=javax.persistence.Embeddable</arg>
+                <arg>plugin:org.jetbrains.kotlin.noarg:annotation=javax.persistence.MappedSuperclass</arg>
+                <arg>plugin:org.jetbrains.kotlin.allopen:annotation=javax.ws.rs.Path</arg>
+                <arg>plugin:org.jetbrains.kotlin.allopen:annotation=javax.enterprise.context.ApplicationScoped</arg>
+                <arg>plugin:org.jetbrains.kotlin.allopen:annotation=javax.persistence.Entity</arg>
+                <arg>plugin:org.jetbrains.kotlin.allopen:annotation=javax.persistence.Embeddable</arg>
+                <arg>plugin:org.jetbrains.kotlin.allopen:annotation=javax.persistence.MappedSuperclass</arg>
+              </args>
+            </arrayArg>
           </arrayArguments>
         </compilerArguments>
       </configuration>
     </facet>
     <facet type="hibernate" name="Hibernate">
       <configuration>
-        <datasource-map />
+        <datasource-map>
+          <unit-entry name="resources:hibernate.cfg.xml" />
+        </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/kotlin/resources/hibernate.cfg.xml" />
       </configuration>
