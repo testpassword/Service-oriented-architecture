@@ -1,1 +1,0 @@
-java -jar serv1.war --server.port=26556 & java -jar serv1.war --server.port=26557

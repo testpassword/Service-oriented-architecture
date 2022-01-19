@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service2" />
+        <module name="service2-ejb" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="JAX_RES_API" target="1.8" />
+      <module name="service2" target="1.8" />
+      <module name="service2-ejb" target="1.8" />
+      <module name="service3" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
