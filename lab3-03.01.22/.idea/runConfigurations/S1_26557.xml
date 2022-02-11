@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="S1-26557" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="service1" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="service1.Service1App" />
+    <option name="HIDE_BANNER" value="true" />
+    <option name="PROGRAM_PARAMETERS" value="--server.port=26557" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

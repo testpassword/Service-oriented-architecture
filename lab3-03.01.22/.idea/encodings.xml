@@ -3,6 +3,8 @@
   <component name="Encoding">
     <file url="file://$USER_HOME$/Desktop/InvokingService/ejb/src/main/resources" charset="UTF-8" />
     <file url="file://$USER_HOME$/Desktop/InvokingService/web-service2/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service1/src/main/kotlin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service1/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service2-ejb/src/main/kotlin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service2-ejb/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service2/src/main/kotlin" charset="UTF-8" />
