@@ -1,0 +1,270 @@
+#%RAML 1.0
+title: soa-lab-4
+mediaType:
+  - application/json
+protocols:
+  - HTTP
+baseUri: /api
+version: "2.0"
+/persons/{id}:
+  get:
+    displayName: get specific person
+    responses:
+      200:
+        body:
+          type: object
+      404:
+        body:
+          type: object
+    securedBy: []  
+  put:
+    displayName: modify specific person
+    responses:
+      200:
+        body:
+          type: object
+      404:
+        body:
+          type: object
+    securedBy: []
+  delete:
+    displayName: delete specific person
+    responses:
+      200:
+        body:
+          type: object
+      404:
+        body:
+          type: object
+    securedBy: []
+  options:
+    displayName: for mule correct working porpuse
+    responses:
+      200: {}
+    securedBy: []
+  uriParameters:
+    id:
+      type: number
+      format: int
+/persons:
+  get:
+    displayName: get all persons
+    responses:
+      200:
+        body:
+          type: object
+      400:
+        body:
+          type: object
+    securedBy: []
+    queryParameters:
+      limit?:
+        type: number
+        format: int
+      offset?:
+        type: number
+        format: int
+      sorters?:
+        type: string
+      filters?:
+        type: string
+  post:
+    displayName: add person
+    responses:
+      200:
+        body:
+          type: number
+          format: int
+      400:
+        body:
+          type: object
+  options:
+    displayName: for mule correct working porpuse
+    responses:
+      200: {}
+    securedBy: []
+/dragons/{id}:
+  get:
+    displayName: get specific dragon
+    responses:
+      200:
+        body:
+          type: object
+      404:
+        body:
+          type: object
+    securedBy: []
+  put:
+    displayName: modify specific dragon
+    responses:
+      200:
+        body:
+          type: object
+      404:
+        body:
+          type: object
+    securedBy: []
+  delete:
+    displayName: delete specific dragon
+    responses:
+      200:
+        body:
+          type: object
+      404:
+        body:
+          type: object
+    securedBy: []
+  options:
+    displayName: for mule correct working porpuse
+    responses:
+      200: {}
+    securedBy: []
+  uriParameters:
+    id:
+      type: number
+      format: int
+/dragons:
+  displayName: get all dragons
+  get:
+    responses:
+      200:
+        body:
+          type: object
+      400:
+        body:
+          type: object
+    securedBy: []
+    queryParameters:
+      limit?:
+        type: number
+        format: int
+      offset?:
+        type: number
+        format: int
+      sorters?:
+        type: string
+      filters?:
+        type: string
+  post:
+    displayName: add person
+    responses:
+      200:
+        body:
+          type: number
+          format: int
+      400:
+        body:
+          type: object
+  options:
+    displayName: for mule correct working porpuse
+    responses:
+      200: {}
+    securedBy: []
+/persons/find_person_included_in_name:
+  get:
+    displayName: get persons included pattern in name
+    responses:
+      200:
+        body:
+          type: object
+      400:
+        body:
+          type: object
+    securedBy: []
+    queryParameters:
+      name?:
+        type: string
+  options:
+    displayName: for mule correct working porpuse
+    responses:
+      200: {}
+    securedBy: []
+/dragons/grouped_by_type:
+  get:
+    displayName: count dragons by type
+    responses:
+      200:
+        body:
+          type: object
+    securedBy: []
+  options:
+    displayName: for mule correct working porpuse
+    responses:
+      200: {}
+    securedBy: []
+/dragons/find_with_killer_weaker_then:
+  get:
+    displayName: find dragons with killer weaker then killer_id
+    responses:
+      200:
+        body:
+          type: object
+      400:
+        body:
+          type: object
+    securedBy: []
+    queryParameters:
+      killer_id:
+        example: 1
+        type: number
+        format: int
+  options:
+    displayName: for mule correct working porpuse
+    responses:
+      200: {}
+    securedBy: []
+types:
+  dragonDto:
+    properties:
+      id:
+        type: number
+        format: int
+      name:
+        type: string
+      coordinates:
+          properties:
+            x:
+              type: number
+              format: double
+            y:
+              type: number
+              format: double
+            z: 
+              type: number
+              format: double
+      creationDate:
+        type: number
+        format: long
+      age:
+        type: number
+        format: int
+      wingspan:
+        type: number
+        format: double
+      color:
+        type: string
+      type:
+        type: string
+      killerId:
+        type: number
+        format: int
+  personDto:
+    properties:
+      id:
+        type: number
+        format: int
+      name:
+        type: string
+      height:
+        type: number
+        format: int
+      weight:
+        type: number
+        format: int
+      passportId:
+        type: string
+      hairColor:
+        type: string
+      teamId:
+        type: number
+        format: int

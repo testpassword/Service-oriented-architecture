@@ -1,0 +1,96 @@
+### getPersonsReq
+POST http://localhost:26557/api
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://testpassword/dtos">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:getPersonsRequest>
+            <gs:offset>1</gs:offset>
+            <gs:limit>3</gs:limit>
+        </gs:getPersonsRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+### getIncludedInNameRequest
+POST http://localhost:26557/api
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://testpassword/dtos">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:getPersonsIncludedInNameRequest>
+            <gs:name>mul</gs:name>
+        </gs:getPersonsIncludedInNameRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+### modifyPersonReq
+POST http://localhost:26557/api
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://testpassword/dtos">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:modifyPersonByIdRequest>
+            <gs:person>
+                <gs:name>SOA4edited</gs:name>
+                <gs:height>228</gs:height>
+                <gs:weight>228</gs:weight>
+                <gs:passportId>SOME_newPassport</gs:passportId>
+                <gs:hairColor>GREEN</gs:hairColor>
+            </gs:person>
+        </gs:modifyPersonByIdRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+### getPersonByIdReq
+POST http://localhost:26557/api
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://testpassword/dtos">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:getPersonByIdRequest>
+            <gs:id>4</gs:id>
+        </gs:getPersonByIdRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+### addPersonReq
+POST http://localhost:26557/api
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://testpassword/dtos">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:addPersonRequest>
+            <gs:person>
+                <gs:name>SOA4</gs:name>
+                <gs:height>228</gs:height>
+                <gs:weight>228</gs:weight>
+                <gs:passportId>SOMEpassport</gs:passportId>
+                <gs:hairColor>GREEN</gs:hairColor>
+            </gs:person>
+        </gs:addPersonRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+### deletePersonByIdReq
+POST http://localhost:26557/api
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://testpassword/dtos">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:deletePersonByIdRequest>
+            <gs:id>3</gs:id>
+        </gs:deletePersonByIdRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

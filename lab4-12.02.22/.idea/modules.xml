@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/front/front.iml" filepath="$PROJECT_DIR$/front/front.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service2/killer.iml" filepath="$PROJECT_DIR$/service2/killer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/lab4-12.02.22.iml" filepath="$PROJECT_DIR$/.idea/lab4-12.02.22.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/SOA-4/Code/Spring-WS/producing-web-service-complete.iml" filepath="$USER_HOME$/Downloads/SOA-4/Code/Spring-WS/producing-web-service-complete.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service1/service1.iml" filepath="$PROJECT_DIR$/service1/service1.iml" />
+    </modules>
+  </component>
+</project>

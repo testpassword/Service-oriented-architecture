@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="person" format="java">
+      <types:shape format="raml"><![CDATA[#%RAML 1.0 DataType
+type: object
+properties:
+      id:
+        type: number
+        format: int
+      name:
+        type: string
+      height:
+        type: number
+        format: int
+      weight:
+        type: number
+        format: int
+      passportId:
+        type: string
+      hairColor:
+        type: string
+      teamId:
+        type: number
+        format: int]]></types:shape>
+    </types:type>
+    <types:type name="dragon" format="java">
+      <types:shape format="raml"><![CDATA[#%RAML 1.0 DataType
+type: object
+properties:
+      id:
+        type: number
+        format: int
+      name:
+        type: string
+      coordinates:
+          properties:
+            x:
+              type: number
+              format: double
+            y:
+              type: number
+              format: double
+            z: 
+              type: number
+              format: double
+      creationDate:
+        type: number
+        format: long
+      age:
+        type: number
+        format: int
+      wingspan:
+        type: number
+        format: double
+      color:
+        type: string
+      type:
+        type: string
+      killerId:
+        type: number
+        format: int]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#1fa26963-9569-4ee8-898d-d04da7bce31b">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="person"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#89730285-9329-4f23-8b8b-2e099a77e31c">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="dragon"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#40125542-1474-4d7c-a1ea-175ae42f51f1">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="person"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#e7591151-3c4f-49aa-9efa-0eb26979b3c1">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="dragon"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

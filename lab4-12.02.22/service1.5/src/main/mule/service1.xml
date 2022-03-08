@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc" xmlns:jms="http://www.mulesoft.org/schema/mule/jms" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd 
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd
+http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd">
+    <http:listener-config name="service1-httpListenerConfig">
+        <http:listener-connection host="0.0.0.0" port="8081" />
+    </http:listener-config>
+    <apikit:config name="service1-config" api="service1.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
+    <http:listener-config name="mule_listener" doc:name="HTTP Listener config" doc:id="5bb2034b-6b44-4994-8065-366f1d4424bc" basePath="api">
+		<http:listener-connection host="0.0.0.0" port="26558" />
+	</http:listener-config>
+	<wsc:config name="Web_Service_Consumer_Config" doc:name="Web Service Consumer Config" doc:id="06de2244-0826-4688-88e4-50bc2a384c14" >
+		<wsc:connection wsdlLocation="http://localhost:26557/api/schema.wsdl" service="SchemaPortService" port="SchemaPortSoap11" address="http://localhost:26557/api" />
+	</wsc:config>
+	<flow name="service1-main">
+        <http:listener config-ref="mule_listener" path="/*">
+            <http:response statusCode="#[vars.httpStatus default 200]">
+                <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+            </http:response>
+            <http:error-response statusCode="#[vars.httpStatus default 500]">
+                <http:body><![CDATA[#[payload]]]></http:body>
+                <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+            </http:error-response>
+        </http:listener>
+        <apikit:router config-ref="service1-config" />
+        <error-handler>
+            <on-error-propagate type="APIKIT:BAD_REQUEST">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Bad request"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">400</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+            <on-error-propagate type="APIKIT:NOT_FOUND">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Resource not found"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">404</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+            <on-error-propagate type="APIKIT:METHOD_NOT_ALLOWED">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Method not allowed"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">405</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+            <on-error-propagate type="APIKIT:NOT_ACCEPTABLE">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Not acceptable"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">406</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+            <on-error-propagate type="APIKIT:UNSUPPORTED_MEDIA_TYPE">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Unsupported media type"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">415</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+            <on-error-propagate type="APIKIT:NOT_IMPLEMENTED">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Not Implemented"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">501</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+        </error-handler>
+    </flow>
+    <flow name="service1-console">
+        <http:listener config-ref="mule_listener" path="/console/*">
+            <http:response statusCode="#[vars.httpStatus default 200]">
+                <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+            </http:response>
+            <http:error-response statusCode="#[vars.httpStatus default 500]">
+                <http:body><![CDATA[#[payload]]]></http:body>
+                <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+            </http:error-response>
+        </http:listener>
+        <apikit:console config-ref="service1-config" />
+        <error-handler>
+            <on-error-propagate type="APIKIT:NOT_FOUND">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Resource not found"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">404</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+        </error-handler>
+    </flow>
+	<flow name="put:\dragons\(id):service1-config">
+        <logger level="INFO" message="put:\dragons\(id):service1-config" />
+		<set-variable value="#[attributes.uriParams.id]" doc:name="id" doc:id="5dea3693-843c-4507-96bc-2315cb3cbf09" variableName="id"/>
+		<ee:transform doc:name="Transform Message" doc:id="e7591151-3c4f-49aa-9efa-0eb26979b3c1" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://testpassword/dtos
+---
+{
+	ns0#modifyDragonByIdRequest: {
+		ns0#dragon: {
+			ns0#id: payload.id,
+			ns0#name: payload.name,
+			ns0#coordinates: {
+				ns0#x: payload.coordinates.x,
+				ns0#y: payload.coordinates.y,
+				ns0#z: payload.coordinates.z
+			},
+			ns0#creationDate: payload.creationDate,
+			ns0#age: payload.age,
+			ns0#wingspan: payload.wingspan,
+			ns0#color: payload.color,
+			ns0#"type": payload."type",
+			ns0#killerId: payload.killerId
+		}
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="5ee5739f-ce6a-4de2-be46-f5dda96387d3" config-ref="Web_Service_Consumer_Config" operation="modifyDragonById"/>
+		<ee:transform doc:name="Transform Message" doc:id="f0597c4f-9398-4786-b7ee-eec8bc3fda14" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+ns ns0 http://testpassword/dtos
+output application/json
+---
+payload.body.ns0#modifyDragonByIdResponse.ns0#msg]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler >
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="d9a51190-1f08-4c53-9095-b4c82f1fa6b0" >
+				<set-variable value="400" doc:name="er" doc:id="79bc40f5-53fa-4928-9b81-0821c752e757" variableName="httpStatus"/>
+				<ee:transform doc:name="Transform Message" doc:id="b01525c1-75e2-4914-89e9-cb769542b3a3" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	msg: error.detailedDescription
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</on-error-propagate>
+		</error-handler>
+    </flow>
+    <flow name="put:\persons\(id):service1-config">
+        <logger level="INFO" message="put:\persons\(id):service1-config" />
+		<set-variable value="#[attributes.uriParams.id]" doc:name="id" doc:id="cd575e20-4c51-413a-97ce-6f86ec729d18" variableName="id"/>
+		<ee:transform doc:name="Transform Message" doc:id="40125542-1474-4d7c-a1ea-175ae42f51f1" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://testpassword/dtos
+---
+{
+	ns0#modifyPersonByIdRequest: {
+		ns0#person: {
+			ns0#id: payload.id,
+			ns0#name: payload.name,
+			ns0#height: payload.height,
+			ns0#weight: payload.weight,
+			ns0#passportId: payload.passportId,
+			ns0#hairColor: payload.hairColor,
+			ns0#teamId: payload.teamId
+		}
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="223aa0ac-da14-43c0-9d41-4f7f8dc79e30" config-ref="Web_Service_Consumer_Config" operation="modifyPersonById"/>
+		<ee:transform doc:name="Transform Message" doc:id="e33f8048-519a-4f32-a005-de338e501862" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+ns ns0 http://testpassword/dtos
+output application/json
+---
+payload.body.ns0#modifyPersonByIdResponse.ns0#msg]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler >
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="7cb8da84-ca8a-425f-a3a8-fca87087c85e" >
+				<set-variable value="400" doc:name="er" doc:id="6ebad1f7-0e5d-46f1-9ca0-bf98e003fdce" variableName="httpStatus"/>
+				<ee:transform doc:name="Transform Message" doc:id="ec170de5-31ab-4015-90c7-33594b621a7b" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	msg: error.detailedDescription
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</on-error-propagate>
+		</error-handler>
+    </flow>
+    <flow name="delete:\dragons\(id):service1-config">
+        <logger level="INFO" message="delete:\dragons\(id):service1-config" />
+		<set-variable value="#[attributes.uriParams.id]" doc:name="id" doc:id="b9cb53f5-ad2d-4a6d-9762-f3a3a9aad167" variableName="id"/>
+		<ee:transform doc:name="Transform Message" doc:id="cf365dee-f1b8-409b-9b3c-58ebbda62d0f" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://testpassword/dtos
+---
+{
+	ns0#deleteDragonByIdRequest: {
+		ns0#id: vars.id
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="29ea41bb-ca1f-40cd-a7b2-0a0623feb89b" config-ref="Web_Service_Consumer_Config" operation="deleteDragonById"/>
+		<ee:transform doc:name="Transform Message" doc:id="dfb31397-6be1-4e05-97b4-d078f7fdef30" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+ns ns0 http://testpassword/dtos
+output application/json
+---
+payload.body.ns0#deleteDragonByIdResponse.ns0#msg]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler >
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="fa443d9c-b869-4195-aa66-1999fc6452b3" >
+				<set-variable value="400" doc:name="er" doc:id="01766474-a335-40d6-9666-8c15f39b6ac3" variableName="httpStatus"/>
+				<ee:transform doc:name="Transform Message" doc:id="14ebc8cc-6d97-42f1-bcd0-148f2554363b" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	msg: error.detailedDescription
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</on-error-propagate>
+		</error-handler>
+    </flow>
+	<flow name="delete:\persons\(id):service1-config">
+        <logger level="INFO" message="delete:\persons\(id):service1-config" />
+		<set-variable value="#[attributes.uriParams.id]" doc:name="id" doc:id="dde7a31c-9947-41e8-803c-d3f9b52a8309" variableName="id"/>
+		<ee:transform doc:name="Transform Message" doc:id="622c7ce3-cad3-4d66-b8dc-5668a15aba5d" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://testpassword/dtos
+---
+{
+	ns0#deletePersonByIdRequest: {
+		ns0#id: vars.id
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="c6d786db-d006-4034-ac22-52b8d880d32d" config-ref="Web_Service_Consumer_Config" operation="deletePersonById"/>
+		<ee:transform doc:name="Transform Message" doc:id="0e4cbac0-13a0-4e6e-9478-aa741723e3dd" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+ns ns0 http://testpassword/dtos
+output application/json
+---
+payload.body.ns0#deletePersonByIdResponse.ns0#msg]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler >
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="07cb55bd-0ca0-4ab9-8a18-d566d9fefff3" >
+				<set-variable value="400" doc:name="er" doc:id="ff3a46da-6ee4-430e-b75f-947584864eae" variableName="httpStatus"/>
+				<ee:transform doc:name="Transform Message" doc:id="74ee266d-129a-45b4-96b4-e8335b25b10b" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	msg: error.detailedDescription
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</on-error-propagate>
+		</error-handler>
+    </flow>
+    <flow name="options:\dragons\find_with_killer_weaker_then:service1-config">
+        <logger level="INFO" message="options:\dragons\find_with_killer_weaker_then:service1-config" />
+    </flow>
+    <flow name="options:\dragons\grouped_by_type:service1-config">
+        <logger level="INFO" message="options:\dragons\grouped_by_type:service1-config" />
+    </flow>
+    <flow name="options:\dragons\(id):service1-config">
+        <ee:transform>
+            <ee:variables>
+                <ee:set-variable variableName="id">attributes.uriParams.'id'</ee:set-variable>
+            </ee:variables>
+        </ee:transform>
+        <logger level="INFO" message="options:\dragons\(id):service1-config" />
+    </flow>
+    <flow name="options:\persons:service1-config">
+        <logger level="INFO" message="options:\persons:service1-config" />
+    </flow>
+    <flow name="options:\persons\find_person_included_in_name:service1-config">
+        <logger level="INFO" message="options:\persons\find_person_included_in_name:service1-config" />
+    </flow>
+    <flow name="options:\persons\(id):service1-config">
+        <ee:transform>
+            <ee:variables>
+                <ee:set-variable variableName="id">attributes.uriParams.'id'</ee:set-variable>
+            </ee:variables>
+        </ee:transform>
+        <logger level="INFO" message="options:\persons\(id):service1-config" />
+    </flow>
+    <flow name="options:\dragons:service1-config">
+        <logger level="INFO" message="options:\dragons:service1-config" />
+    </flow>
+    <flow name="get:\dragons\find_with_killer_weaker_then:service1-config">
+        <logger level="INFO" message="get:\dragons\find_with_killer_weaker_then:service1-config" />
+		<set-variable value="#[attributes.queryParams.killer_id]" doc:name="killerId" doc:id="ee95a11b-9784-4a8e-a43f-42405093fa17" variableName="killerId"/>
+		<ee:transform doc:name="Transform Message" doc:id="0dbbb137-aa88-4603-9a4f-cb280675a28f" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://testpassword/dtos
+---
+{
+	ns0#getDragonsWithKillerWeakerThenRequest: {
+		ns0#killerId: vars.killerId
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="b3bbaff5-ea9f-403e-ab0a-efa3464ae928" config-ref="Web_Service_Consumer_Config" operation="getDragonsWithKillerWeakerThen"/>
+		<ee:transform doc:name="Transform Message" doc:id="97239d60-f521-4bdb-81b5-97cd503253ff" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+ns ns0 http://testpassword/dtos
+output application/json
+---
+payload.body.ns0#getDragonsWithKillerWeakerThenResponse.*dtos map (it, i) -> {
+	id: it.id,
+	name: it.name,
+	coordinates: it.coordinates,
+	creationDate: it.creationDate,
+	age: it.age,
+	wingspan: it.wingspan,
+	color: it.color,
+	'type': it.'type',
+	killerId: it.killerId	
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler >
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="96603c86-b77e-4e8c-b40d-7514e21a4ef3" >
+				<set-variable value="400" doc:name="er" doc:id="83614d8d-4f53-404e-9e29-d3cc8ec1657a" variableName="httpStatus"/>
+				<ee:transform doc:name="Transform Message" doc:id="ca5c9fb6-2099-4422-9135-307486170d3b" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	msg: error.detailedDescription
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</on-error-propagate>
+		</error-handler>
+    </flow>
+    <flow name="get:\dragons\grouped_by_type:service1-config">
+        <logger level="INFO" message="get:\dragons\grouped_by_type:service1-config" />
+		<ee:transform doc:name="Transform Message" doc:id="753a3541-ecd4-4224-96de-f4d237e4160b" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://testpassword/dtos
+---
+{
+	ns0#getDragonsGroupedByTypeRequest: null
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="fed5e265-e87c-4780-b302-eaa6a01a8bba" config-ref="Web_Service_Consumer_Config" operation="getDragonsGroupedByType"/>
+		<ee:transform doc:name="Transform Message" doc:id="4fc67353-dda1-4d03-9418-ad96344ec054" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+ns ns0 http://testpassword/dtos
+output application/json
+---
+payload.body.ns0#getDragonsGroupedByTypeResponse.ns0#stat]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler >
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="7fbc80b5-ea1a-45db-bcb5-d39bf2fd459d" >
+				<set-variable value="400" doc:name="er" doc:id="ee79624d-ecd1-4a0a-b011-2e77f9ab3863" variableName="httpStatus"/>
+				<ee:transform doc:name="Transform Message" doc:id="02cb255f-4dc1-4803-9355-0eb4aa25c259" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	msg: error.detailedDescription
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</on-error-propagate>
+		</error-handler>
+    </flow>
+    <flow name="get:\dragons\(id):service1-config">
+        <logger level="INFO" message="get:\dragons\(id):service1-config" />
+		<set-variable value="#[attributes.uriParams.id]" doc:name="id" doc:id="92737978-5744-40ac-8574-462c496148d6" variableName="id"/>
+		<ee:transform doc:name="Transform Message" doc:id="784e6c9e-c846-46db-86e6-914f88d66fff" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://testpassword/dtos
+---
+{
+	ns0#getDragonByIdRequest: {
+		ns0#id: vars.id
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="665b6de2-d670-4065-a9bc-9ca1fd23d81f" config-ref="Web_Service_Consumer_Config" operation="getDragonById"/>
+		<ee:transform doc:name="Transform Message" doc:id="74609d88-42d6-4854-92b1-ba2dd338841b" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+ns ns0 http://testpassword/dtos
+output application/json
+---
+payload.body.ns0#getDragonByIdResponse.ns0#dragon]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler >
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="1b25fcda-9d3c-48be-99fa-896630f07c9f" >
+				<set-variable value="400" doc:name="er" doc:id="01365cb6-3211-4362-9966-12d48e91333f" variableName="httpStatus"/>
+				<ee:transform doc:name="Transform Message" doc:id="34fd23f7-7ee1-4e7f-8bef-5da616b999d6" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	msg: error.detailedDescription
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</on-error-propagate>
+		</error-handler>
+    </flow>
+	<flow name="get:\persons:service1-config">
+        <logger level="INFO" message="get:\persons:service1-config" />
+		<set-variable value="#[attributes.queryParams.limit]" doc:name="limit" doc:id="096fa2f8-1e17-4450-b8f5-d8be5c14b6ce" variableName="limit"/>
+		<set-variable value="#[attributes.queryParams.offset]" doc:name="offset" doc:id="5c92dbab-cc79-4b6e-a871-bf827f3a8668" variableName="offset"/>
+		<set-variable value="#[attributes.queryParams.filters]" doc:name="filters" doc:id="42c394f1-980e-4573-8286-6e31e6e2b746" variableName="filters"/>
+		<set-variable value="#[attributes.queryParams.sorters]" doc:name="sorters" doc:id="dfdb6386-eacc-4c08-bc07-4cbdb02c498c" variableName="sorters"/>
+		<ee:transform doc:name="Transform Message" doc:id="f736ca4f-4aca-43ef-af0f-5e0b0ed14035" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://testpassword/dtos
+---
+{
+	ns0#getPersonsRequest: {
+		ns0#limit: vars.limit as Number|Null,
+		ns0#offset: vars.offset as Number|Null,
+		ns0#sorters: vars.sorters as String|Null,
+		ns0#filters: vars.filters as String|Null
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="1dea0ec7-12cf-4d0c-bc71-a6fa4b61000e" config-ref="Web_Service_Consumer_Config" operation="getPersons"/>
+		<ee:transform doc:name="Transform Message" doc:id="b6997393-1a78-4a00-a130-d957203fd7b0" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+ns ns0 http://testpassword/dtos
+output application/json
+---
+payload.body.ns0#getPersonsResponse.*dtos map (it, i) -> {
+	id: it.id,
+	name: it.name,
+	height: it.height,
+	weight: it.weight,
+	passportId: it.passportId,
+	hairColor: it.hairColor,
+	teamId: it.teamId	
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler >
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="2fcf098c-62d8-4cca-84fb-0fa0e8133a76" >
+				<set-variable value="400" doc:name="er" doc:id="c0784e54-1b3e-4fed-864b-592059cc562e" variableName="httpStatus"/>
+				<ee:transform doc:name="Transform Message" doc:id="47adfd5c-1a20-40a2-9277-062532c80345" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	msg: error.detailedDescription
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</on-error-propagate>
+		</error-handler>
+    </flow>
+    <flow name="get:\persons\find_person_included_in_name:service1-config">
+        <logger level="INFO" message="get:\persons\find_person_included_in_name:service1-config" />
+		<set-variable value="#[attributes.queryParams.name]" doc:name="name" doc:id="2ebf1986-5b21-4237-a942-f02b60b64719" variableName="name"/>
+		<ee:transform doc:name="Transform Message" doc:id="3e6a061b-6f90-4930-a730-4d0fccbb62b7" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://testpassword/dtos
+---
+{
+	ns0#getPersonsIncludedInNameRequest: {
+		ns0#name: vars.name as String
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="553534b4-e329-488d-a12e-930768723b63" config-ref="Web_Service_Consumer_Config" operation="getPersonsIncludedInName"/>
+		<ee:transform doc:name="Transform Message" doc:id="07be6e5a-1365-4236-908c-7e56becbd7d0" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+ns ns0 http://testpassword/dtos
+output application/json
+---
+payload.body.ns0#getPersonsIncludedInNameResponse.*dtos map (it, i) -> {
+	id: it.id,
+	name: it.name,
+	height: it.height,
+	weight: it.weight,
+	passportId: it.passportId,
+	hairColor: it.hairColor,
+	teamId: it.teamId	
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler >
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="0cb30e2d-de8e-492c-9a83-aa4ccc7e2bc4" >
+				<set-variable value="400" doc:name="er" doc:id="80aa4197-7149-4977-a5b6-74705c605113" variableName="httpStatus"/>
+				<ee:transform doc:name="Transform Message" doc:id="09c16a51-fdfd-4526-819e-382c60b13064" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	msg: error.detailedDescription
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</on-error-propagate>
+		</error-handler>
+    </flow>
+    <flow name="get:\persons\(id):service1-config">
+        <logger level="INFO" message="get:\persons\(id):service1-config" />
+		<set-variable value="#[attributes.uriParams.id]" doc:name="id" doc:id="f87eaf04-da13-436d-bee9-d85403606ee3" variableName="id"/>
+		<ee:transform doc:name="Transform Message" doc:id="31e74198-2393-4265-8984-23950e73bc21" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://testpassword/dtos
+---
+{
+	ns0#getPersonByIdRequest: {
+		ns0#id: vars.id
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="99581f7b-5dcf-4f78-b4da-89d57bfced70" config-ref="Web_Service_Consumer_Config" operation="getPersonById"/>
+		<ee:transform doc:name="Transform Message" doc:id="a4cf142a-98fd-419b-bc91-3295e0f8caee" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+ns ns0 http://testpassword/dtos
+output application/json
+---
+payload.body.ns0#getPersonByIdResponse.ns0#person]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler >
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="3fa01f31-37d0-46d0-9f6d-a26e8c39956a" >
+				<set-variable value="400" doc:name="er" doc:id="e37d6f0d-06d4-4e02-9bf6-5c6edd3155dc" variableName="httpStatus"/>
+				<ee:transform doc:name="Transform Message" doc:id="e1f221dc-5b31-4711-8ea0-8c129b1a327e" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	msg: error.detailedDescription
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</on-error-propagate>
+		</error-handler>
+    </flow>
+    <flow name="get:\dragons:service1-config">
+        <logger level="INFO" message="get:\dragons:service1-config" />
+		<set-variable value="#[attributes.queryParams.limit]" doc:name="limit" doc:id="fa83bc1e-1805-43c1-bbbf-c8a902b3d36d" variableName="limit"/>
+		<set-variable value="#[attributes.queryParams.offset]" doc:name="offset" doc:id="f048f45f-f0d2-4794-94d3-87e4e4d8f583" variableName="offset"/>
+		<set-variable value="#[attributes.queryParams.filters]" doc:name="filters" doc:id="f4a71d05-2a33-4c93-938b-3b2f333e3837" variableName="filters"/>
+		<set-variable value="#[attributes.queryParams.sorters]" doc:name="sorters" doc:id="dbb371de-1300-4b77-8ec7-1b65ca559d60" variableName="sorters"/>
+		<ee:transform doc:name="Transform Message" doc:id="9e9e70ef-0e42-422b-8172-b5be99ca88cd" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://testpassword/dtos
+---
+{
+	ns0#getDragonsRequest: {
+		ns0#limit: vars.limit as Number|Null,
+		ns0#offset: vars.offset as Number|Null,
+		ns0#sorters: vars.sorters as String|Null,
+		ns0#filters: vars.filters as String|Null
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="b55dc1ee-a7a5-4a4e-96d2-032930fe8dfd" config-ref="Web_Service_Consumer_Config" operation="getDragons"/>
+		<ee:transform doc:name="Transform Message" doc:id="46825dab-9f80-462d-a9df-d406de46d20c" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+ns ns0 http://testpassword/dtos
+output application/json
+---
+payload.body.ns0#getDragonsResponse.*dtos map (it, i) -> {
+	id: it.id,
+	name: it.name,
+	coordinates: it.coordinates,
+	creationDate: it.creationDate,
+	age: it.age,
+	wingspan: it.wingspan,
+	color: it.color,
+	'type': it.'type',
+	killerId: it.killerId	
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler >
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="59504e7b-7a94-45a2-9ea7-4e64be3701a0" >
+				<set-variable value="400" doc:name="er" doc:id="ae5df221-c202-42e8-a00b-9cf6f13cef84" variableName="httpStatus"/>
+				<ee:transform doc:name="Transform Message" doc:id="4aeca751-e82d-41f6-9ba0-961f03f8c7c9" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	msg: error.detailedDescription
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</on-error-propagate>
+		</error-handler>
+    </flow>
+    <flow name="post:\persons:service1-config">
+        <logger level="INFO" message="post:\persons:service1-config" />
+		<ee:transform doc:name="Transform Message" doc:id="1fa26963-9569-4ee8-898d-d04da7bce31b" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://testpassword/dtos
+---
+{
+	ns0#addPersonRequest: {
+		ns0#person: {
+			ns0#id: payload.id,
+			ns0#name: payload.name,
+			ns0#height: payload.height,
+			ns0#weight: payload.weight,
+			ns0#passportId: payload.passportId,
+			ns0#hairColor: payload.hairColor,
+			ns0#teamId: payload.teamId
+		}
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="3d491f33-aab0-4bc2-8a98-47ff319dc57d" config-ref="Web_Service_Consumer_Config" operation="addPerson"/>
+		<ee:transform doc:name="Transform Message" doc:id="2eaa37a0-a708-4db9-b3e1-0af83dd53b3d" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+ns ns0 http://testpassword/dtos
+output application/java
+---
+payload.body.ns0#addPersonResponse.ns0#id]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler >
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="75d54a56-1729-42e7-92ab-b3fd7c55f6bf" >
+				<set-variable value="400" doc:name="er" doc:id="3ca58961-4dac-41fe-a5a4-cdd8a5ad9c1f" variableName="httpStatus"/>
+				<ee:transform doc:name="Transform Message" doc:id="16a75fdd-0ab9-4e17-96bd-6058602f1c92" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	msg: error.detailedDescription
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</on-error-propagate>
+		</error-handler>
+    </flow>
+    <flow name="post:\dragons:service1-config">
+        <logger level="INFO" message="post:\dragons:service1-config" />
+		<ee:transform doc:name="Transform Message" doc:id="89730285-9329-4f23-8b8b-2e099a77e31c" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://testpassword/dtos
+---
+{
+	ns0#addDragonRequest: {
+		ns0#dragon: {
+			ns0#id: payload.id,
+			ns0#name: payload.name,
+			ns0#coordinates: {
+				ns0#x: payload.coordinates.x,
+				ns0#y: payload.coordinates.y,
+				ns0#z: payload.coordinates.z
+			},
+			ns0#creationDate: payload.creationDate,
+			ns0#age: payload.age,
+			ns0#wingspan: payload.wingspan,
+			ns0#color: payload.color,
+			ns0#"type": payload."type",
+			ns0#killerId: payload.killerId
+		}
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="02425eff-9b66-4897-802d-3fd750ff68b0" config-ref="Web_Service_Consumer_Config" operation="addDragon"/>
+		<ee:transform doc:name="Transform Message" doc:id="853b4558-9d0a-484f-8988-91d521b7293e" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+ns ns0 http://testpassword/dtos
+output application/java
+---
+payload.body.ns0#addDragonResponse.ns0#id]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler >
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="e89302d0-b0a6-435e-909c-a0a418e76d7f" >
+				<set-variable value="400" doc:name="er" doc:id="adce81b2-658e-4ecc-bf78-61d07d8d23a1" variableName="httpStatus"/>
+				<ee:transform doc:name="Transform Message" doc:id="35e215db-8943-4665-8164-e25bf4e835ab" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	msg: error.detailedDescription
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</on-error-propagate>
+		</error-handler>
+    </flow>
+</mule>

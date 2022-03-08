@@ -1,0 +1,120 @@
+### getDragonsRequest
+POST http://localhost:26557/api
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://testpassword/dtos">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:getDragonsRequest>
+            <gs:limit>4</gs:limit>
+            <gs:offset>0</gs:offset>
+        </gs:getDragonsRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+### getDragonsGroupedByTypeReq
+POST http://localhost:26557/api
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://testpassword/dtos">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:getDragonsGroupedByTypeRequest/>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+### getDragonsWithKillerWeakerThenReq
+POST http://localhost:26557/api
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://testpassword/dtos">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:getDragonsWithKillerWeakerThenRequest>
+            <gs:killerId>4</gs:killerId>
+        </gs:getDragonsWithKillerWeakerThenRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+### modifyDragonReq
+POST http://localhost:26557/api
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://testpassword/dtos">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:modifyDragonByIdRequest>
+            <gs:dragon>
+                <gs:name>oslo</gs:name>
+                <gs:coordinates>
+                    <gs:x>2</gs:x>
+                    <gs:y>2</gs:y>
+                    <gs:z>8</gs:z>
+                </gs:coordinates>
+                <gs:creationDate>1</gs:creationDate>
+                <gs:age>17</gs:age>
+                <gs:wingspan>22</gs:wingspan>
+                <gs:color>GREEN</gs:color>
+                <gs:type>FIRE</gs:type>
+            </gs:dragon>
+        </gs:modifyDragonByIdRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+### getDragonByIdReq
+POST http://localhost:26557/api
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://testpassword/dtos">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:getDragonByIdRequest>
+            <gs:id>3</gs:id>
+        </gs:getDragonByIdRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+### addDragonReq
+POST http://localhost:26557/api
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://testpassword/dtos">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:addDragonRequest>
+            <gs:dragon>
+                <gs:name>oslo</gs:name>
+                <gs:coordinates>
+                    <gs:x>2</gs:x>
+                    <gs:y>2</gs:y>
+                    <gs:z>8</gs:z>
+                </gs:coordinates>
+                <gs:creationDate>1</gs:creationDate>
+                <gs:age>17</gs:age>
+                <gs:wingspan>22</gs:wingspan>
+                <gs:color>GREEN</gs:color>
+                <gs:type>FIRE</gs:type>
+            </gs:dragon>
+        </gs:addDragonRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+### deleteDragonByIdReq
+POST http://localhost:26557/api
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://testpassword/dtos">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:deleteDragonByIdRequest>
+            <gs:id>100</gs:id>
+        </gs:deleteDragonByIdRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

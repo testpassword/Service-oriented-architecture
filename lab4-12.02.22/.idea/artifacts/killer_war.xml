@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="killer:war">
+    <output-path>$PROJECT_DIR$/service2/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>killer</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="killer.war">
+      <element id="artifact" artifact-name="killer:war exploded" />
+    </root>
+  </artifact>
+</component>
